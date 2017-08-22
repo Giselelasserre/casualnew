@@ -1,16 +1,15 @@
 class ItemsController < ApplicationController
+  skip_before_filter :authenticate_user!, only: [:index, :show]
 
-def index
-    @items = Item.all
-
+  def index
+    # @items = Item.all
     if params[:location].present?
-      @itens = @itens.near(params[:location], 20)
+      @items = @items.near(params[:location], 20)
     else
-      @itens = Item.where.not(latitude: nil, longitude: nil)
+      @items = Item.where.not(latitude: nil, longitude: nil)
     end
 
-
-    @hash = Gmaps4rails.build_markers(@itens) do |item, marker|
+    @hash = Gmaps4rails.build_markers(@items) do |item, marker|
       marker.lat item.latitude
       marker.lng item.longitude
       # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
@@ -62,6 +61,4 @@ private
     # Never trust user data!
     params.require(:item).permit(:location, :description, :price, :title)
   end
-end
-
 end

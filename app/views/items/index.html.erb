@@ -1,0 +1,45 @@
+<div class="map-wrapper">
+  <div class="grid-container">
+    <div class="cards_container">
+      <% @items.each do |item| %>
+        <!-- <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%#= image_url("blouse1.jpg") %>')"> -->
+          <div class="card-content">
+            <div class="card-category"></div>
+            <div class="card-description">
+              <div>
+                <h2> <%= item.item_name %> </h2>
+                  <p> <%= item.size %>
+                         $ <%= item.price %> </p>
+              </div>
+              <p><%= item.description %></p>
+            </div>
+          <img class="card-clothes" src="assets/<%= item.photo_item %>">
+          <%= link_to "", item_path(item), class: "card-link" %>
+        </div>
+      <!-- </div> -->
+    <% end %>
+
+  </div>
+  <div class="map_container">
+    <div id="map" ></div>
+  </div>
+</div>
+
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).ready(function() {
+      var handler = Gmaps.build('Google');
+      handler.buildMap({ internal: { id: 'map' } }, function() {
+        markers = handler.addMarkers(<%= raw @hash.to_json %>);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+        if (markers.length == 0) {
+          handler.getMap().setZoom(2);
+        } else if (markers.length == 1) {
+          handler.getMap().setZoom(14);
+        }
+      });
+    });
+  <% end %>
+<% end %>
+
