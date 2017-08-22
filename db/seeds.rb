@@ -10,20 +10,22 @@
 puts "Creating items..... "
 
 Item.create! ({
-item_name: "blouse"
-size: "M"
-price: 100
-photo_item:"blouse1.jpg"
-days_delivery: 5
+item_name: "blouse",
+size: "M",
+price: 100,
+photo_item:"blouse1.jpg",
+days_delivery: 5,
+user_id: 1
 })
 
 
 Item.create! ({
-item_name: "pants"
-size: "L"
-price: 300
-photo_item:
-days_delivery: 3
+item_name: "pants",
+size: "L",
+price: 300,
+photo_item:"pants.jpg",
+days_delivery: 3,
+user_id: 1
 })
 
 puts 'Finished the seeding!'

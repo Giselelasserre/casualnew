@@ -10,23 +10,23 @@ class ItemsController < ApplicationController
     end
 
 
-    @hash = Gmaps4rails.build_markers(@items) do |item, marker|
-      marker.lat item.latitude
-      marker.lng item.longitude
+    # @hash = Gmaps4rails.build_markers(@items) do |item, marker|
+    #   marker.lat item.latitude
+    #   marker.lng item.longitude
       # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
-    end
+    #end
   end
 
   def show
     @purchase = Purchase.new
     @item = Item.find(params[:id])
-    @alert_message = "You are viewing #{@item.name}"
-    @item_coordinates = { lat: @item.latitude, lng: @item.longitude }
-    @hash = Gmaps4rails.build_markers(@item) do |item, marker|
-      marker.lat item.latitude
-      marker.lng item.longitude
-      # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
-    end
+    @alert_message = "You are viewing #{@item.item_name}"
+    # @item_coordinates = { lat: @item.latitude, lng: @item.longitude }
+    # @hash = Gmaps4rails.build_markers(@item) do |item, marker|
+    #   marker.lat item.latitude
+    #   marker.lng item.longitude
+    #   # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
+    # end
   end
 
   def new
@@ -60,7 +60,7 @@ private
   def item_params
     # *Strong params*: You need to *whitelist* what can be updated by the user
     # Never trust user data!
-    params.require(:item).permit(:address, :item_name, :size, :price, :days_delivery)
+    params.require(:item).permit(:address, :item_name, :size, :price, :days_delivery, :description, :photo_item)
   end
 end
 
