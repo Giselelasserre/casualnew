@@ -13,7 +13,7 @@ Item.create! ({
 item_name: "blouse"
 size: "M"
 price: 100
-photo_item:
+photo_item:"blouse1.jpg"
 days_delivery: 5
 })
 
