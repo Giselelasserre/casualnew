@@ -1,10 +1,12 @@
 class ItemsController < ApplicationController
+  skip_before_filter :authenticate_user!, only: [:index, :show]
 
   def index
     @items = Item.all
 
     if params[:address].present?
       @items = @items.near(params[:address], 20)
+
     else
       @items = Item.where.not(latitude: nil, longitude: nil)
     end
@@ -13,7 +15,7 @@ class ItemsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@items) do |item, marker|
       marker.lat item.latitude
       marker.lng item.longitude
-      marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
+      marker.infowindow render_to_string(partial: "/items/map_box", locals: { item: item })
     end
   end
 
@@ -63,7 +65,4 @@ private
     params.require(:item).permit(:address, :item_name, :size, :price, :days_delivery, :description, :photo_item)
   end
 end
-
-
-
 
