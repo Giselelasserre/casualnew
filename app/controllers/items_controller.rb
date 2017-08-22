@@ -10,23 +10,23 @@ class ItemsController < ApplicationController
     end
 
 
-    # @hash = Gmaps4rails.build_markers(@items) do |item, marker|
-    #   marker.lat item.latitude
-    #   marker.lng item.longitude
-      # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
-    #end
+    @hash = Gmaps4rails.build_markers(@items) do |item, marker|
+      marker.lat item.latitude
+      marker.lng item.longitude
+      marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
+    end
   end
 
   def show
     @purchase = Purchase.new
     @item = Item.find(params[:id])
     @alert_message = "You are viewing #{@item.item_name}"
-    # @item_coordinates = { lat: @item.latitude, lng: @item.longitude }
-    # @hash = Gmaps4rails.build_markers(@item) do |item, marker|
-    #   marker.lat item.latitude
-    #   marker.lng item.longitude
-    #   # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
-    # end
+    @item_coordinates = { lat: @item.latitude, lng: @item.longitude }
+    @hash = Gmaps4rails.build_markers(@item) do |item, marker|
+      marker.lat item.latitude
+      marker.lng item.longitude
+      # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
+    end
   end
 
   def new
