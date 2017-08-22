@@ -1,1 +1,192 @@
 // Specific CSS for your home-page
+
+body {
+    margin: 0;
+    margin-bottom: 100px;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.ctn {
+  width: 100%;
+  padding: 0;
+}
+
+.search-bar {
+  border-radius: 30px
+}
+
+.banner-home {
+  text-align: center;
+  height: 700px;
+  width:100%;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-home p {
+  font-size: 25px;
+  font-weight: lighter;
+  color: rgb(255, 255, 255);
+  margin-bottom: 30px;
+}
+
+.banner-home {
+  background-image: -webkit-linear-gradient(bottom, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), image-url('banner_home.jpg');
+  background-image: -o-linear-gradient(bottom, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), image-url('banner_home.jpg');
+  background-image: linear-gradient(to top, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), image-url('banner_home.jpg');
+}
+h1.white {
+  margin-top: -80px;
+  color: white;
+  font-size: 50px;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+
+.buton-purple {
+  background-color: #b220a6;
+  border: 0;
+  border-radius: 45px;
+  height: 50px;
+  width: 120px;
+  // position: absolute;
+  // top: 0;
+  // right: 0;
+  // bottom: 0;
+  // left: 0;
+  transition: border-color 0.4s ease 0s, background-color 0.4s ease 0s;
+  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.35);
+}
+
+.buton-purple:hover{
+  background: #6b1263;
+}
+.card {
+    flex: 1 1 auto;
+    margin: 10px;
+    border-radius: 1px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    background: white;
+
+}
+
+.cards {
+  display: flex;
+}
+.cards .card{
+  flex: 1 1 auto;
+}
+
+.card-category {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: lighter;
+    opacity: 0.9;
+}
+
+.avatar {
+    width: 30px;
+    border-radius: 50%;
+}
+
+.avatar-large {
+    width: 40px;
+}
+
+.card-user {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.card-body {
+    height: 180px;
+    background-size: cover;
+    color: white;
+    position: relative;
+}
+
+.card-link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 2;
+    background: black;
+    opacity: 0;
+}
+
+.card-description {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+.card-description h2 {
+    font-size: 20px;
+    margin-bottom: 0px;
+    font-weight: bold;
+}
+
+.card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+.card-footer p {
+    color: rgba(0,0,0,0.4);
+    font-weight: lighter;
+    font-size: 12px;
+}
+
+.card-footer .controls {
+    display: flex;
+    align-items: center;
+}
+
+.card-footer .controls i:hover {
+    opacity: 0.4;
+}
+
+.card-footer .controls i {
+    padding: 0 10px;
+    color: black;
+    opacity: 0.2;
+}
+
+.card-body.pants {
+  background-image: -webkit-linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), image-url('pants.jpg');
+  background-image: -o-linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), image-url('pants.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), image-url('pants.jpg');
+}
+
+.card-body.jacket {
+  background-image: -webkit-linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), image-url('jacket1.jpg');
+  background-image: -o-linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), image-url('jacket1.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), image-url('jacket1.jpg');
+}
+.card-body.blouse {
+  background-image: -webkit-linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), image-url('blouse1.jpg');
+  background-image: -o-linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), image-url('blouse1.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), image-url('blouse1.jpg');
+}
+.about-txt {
+  margin: 0;
+  margin-bottom: 100px;
+  font-family: 'Varela Round', sans-serif;
+  padding: 30px;
+  background-color: lightgray;
+
+
+  }
+

@@ -1,2 +1,100 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<div class="container ctn">
+  <div class="banner-home" >
+    <div class="banner-content">
+      <h1 class="white">Get fashion with Casual</h1>
+      <p>Well dress, everyday</p>
+      <form action="/items" class="form-inline">
+      <input type="text" name="item_name" class="form-control input-lg search-bar" placeholder="e.g:Pants,Blouse,Shirt">
+        <input type="text" name="location" class="form-control input-lg search-bar" placeholder="Where?">
+        <select name="" id="" class="form-control input-lg search-bar">
+          <option value="1">S</option>
+          <option value="2">M</option>
+          <option value="3">L</option>
+        </select>
+        <input type="submit" class="buton-purple" value="Search">
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="text-center text-title">
+    <p>Glamours and Fancy</p>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-lg-4">
+      <div class="card">
+        <div class="card-body pants">
+          <span class="card-category">Pants</span>
+          <div class="card-description">
+            <h2>Cindy's Pants</h2>
+            <p>Great Pants</p>
+          </div>
+          <%= image_tag "face1.jpg", class: "card-user avatar avatar-large" %>
+          <a class="card-link" href="#"></a>
+        </div>
+        <div class="card-footer">
+          <p>Posted on 22/11/19</p>
+          <div class="controls">
+            <a href="#"><i class="fa fa-star"></i></a>
+            <a href="#"><i class="fa fa-heart"></i></a>
+            <a href="#"><i class="fa fa-share"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-md-6 col-lg-4">
+      <div class="card">
+        <div class="card-body jacket">
+          <span class="card-category">Jacket</span>
+          <div class="card-description">
+            <h2>Sall's jacket</h2>
+            <p>Great jackets</p>
+          </div>
+          <%= image_tag "face2.jpg", class: "card-user avatar avatar-large" %>
+          <a class="card-link" href="#"></a>
+        </div>
+        <div class="card-footer">
+          <p>Posted on 22/11/19</p>
+          <div class="controls">
+            <a href="#"><i class="fa fa-star"></i></a>
+            <a href="#"><i class="fa fa-heart"></i></a>
+            <a href="#"><i class="fa fa-share"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-md-6 col-lg-4">
+      <div class="card">
+        <div class="card-body blouse">
+          <span class="card-category">Blouse</span>
+          <div class="card-description">
+            <h2>Ana's blouse</h2>
+            <p>Fancy blouse</p>
+          </div>
+          <%= image_tag "face3.jpg", class: "card-user avatar avatar-large" %>
+          <a class="card-link" href="#"></a>
+        </div>
+        <div class="card-footer">
+          <p>Posted on 22/11/19</p>
+          <div class="controls">
+            <a href="#"><i class="fa fa-star"></i></a>
+            <a href="#"><i class="fa fa-heart"></i></a>
+            <a href="#"><i class="fa fa-share"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class= "about">
+  <div class= "about-txt">
+    <h2>About Casual</h2>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
+  </div>
+</div>
+
