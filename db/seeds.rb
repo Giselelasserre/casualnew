@@ -106,4 +106,15 @@ owner: user,
 address: "Praia de Botafogo 450 Rio de Janeiro"
 })
 
+Item.create! ({
+item_name: "blouse",
+size: "S",
+price: 300,
+photo_item:"blouse1.jpg",
+days_delivery: 3,
+user_id: 9,
+owner: user,
+address: "Rua Parana Curitiba"
+})
+
 puts 'Finished the seeding!'
