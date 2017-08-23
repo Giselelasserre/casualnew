@@ -15,6 +15,7 @@ user = User.create({
 puts "Creating user..... "
 
 Item.create! ({
+category: "Blouse",
 item_name: "blouse",
 size: "M",
 price: 100,
@@ -27,6 +28,7 @@ address: "Rua Francisco Otaviano 60 Rio de Janeiro"
 
 
 Item.create! ({
+category: "Pant",
 item_name: "pants",
 size: "L",
 price: 300,
@@ -38,6 +40,7 @@ address: "Avenida Epitacio Pessoa 2900 Rio de Janeiro"
 })
 
 Item.create! ({
+category: "Jacket",
 item_name: "red jacket",
 size: "M",
 price: 100,
@@ -50,6 +53,8 @@ address: "Avenida Atlantica 500 Rio de Janeiro"
 
 
 Item.create! ({
+category: "Jacket",
+category: "jacket" ,
 item_name: "denim jacket",
 size: "L",
 price: 300,
@@ -57,10 +62,12 @@ photo_item: "jacket2.jpg",
 days_delivery: 3,
 user_id: 4,
 owner: user,
+category: jacket,
 address: "Rua Barata Ribeiro 300 Rio de Janeiro"
 })
 
 Item.create! ({
+category: "Jacket",
 item_name: "blue jacket",
 size: "M",
 price: 100,
@@ -73,6 +80,7 @@ address: "Rua Sao Clemente 200 Rio de Janeiro"
 
 
 Item.create! ({
+category: "Pant",
 item_name: "blue pants",
 size: "L",
 price: 300,
@@ -84,6 +92,7 @@ address: "Avenida Rio Branco 658 Rio de Janeiro"
 })
 
 Item.create! ({
+category: "Pant",
 item_name: "red pants",
 size: "M",
 price: 100,
@@ -96,6 +105,7 @@ address: "Avenida Vieira Souto 480 Rio de Janeiro"
 
 
 Item.create! ({
+category: "Pant",
 item_name: "pants",
 size: "L",
 price: 300,
@@ -107,6 +117,7 @@ address: "Praia de Botafogo 450 Rio de Janeiro"
 })
 
 Item.create! ({
+category: "Blouse",
 item_name: "blouse",
 size: "S",
 price: 300,
