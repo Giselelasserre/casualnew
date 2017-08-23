@@ -1,0 +1,21 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+    <h1> Add your Clothes here </h1>
+      <%= simple_form_for(@item) do |f| %>
+        <%= f.input :item_name %>
+        <%= f.input :size %>
+        <%= f.input :address %>
+        <%= f.input :price %>
+        <%= f.input :days_delivery %>
+        <%= f.file_field :picture %>
+
+        <%= f.submit "Create an Item", class: "btn btn-primary btn-lg btn-block" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
