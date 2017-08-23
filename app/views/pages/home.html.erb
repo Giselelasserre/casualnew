@@ -5,7 +5,7 @@
       <h1 class="white">Get fashion with Casual</h1>
       <p>Well dress, everyday</p>
       <form action="/items" class="form-inline">
-      <input type="text" name="category" class="form-control input-lg search-bar" placeholder="e.g:Pants,Blouse,Shirt">
+      <%= collection_select(:item, :category, Item::CATEGORIES, :to_s, :to_s, {}, class: "form-control input-lg search-bar", placeholder: "e.g:Pants,Blouse,Shirt" ) %>
         <input type="text" name="address" class="form-control input-lg search-bar" placeholder="Where?">
         <select name="" id="" class="form-control input-lg search-bar">
           <option value="1">S</option>
