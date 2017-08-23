@@ -10,9 +10,14 @@
         <p> Price in USD <%= @item.price %> </p>
         <p> Size <%= @item.size %> </p>
 
-        <a href="#" class="btn btn-primary btn-lg">Buy this item</a>
 
-        <a href="#">Add more items </a>
+    <%= link_to "Buy this item", "#", class: "btn btn-primary btn-lg" %>
+
+    <br>
+    <br>
+
+    <%= link_to "Add more items", items_path, class: "btn btn-warning" %>
+
       </div>
     </div>
 
@@ -52,6 +57,4 @@
 
 
 
-   <%= link_to "Add a new Item on the Cart", "#", class: "btn btn-primary" %>
 
-    <%= link_to "Get to the Payment Page", "#", class: "btn btn-primary" %>
