@@ -6,6 +6,7 @@
       <div class="main-content">
         <img src="<%= image_url(@item.photo_item) %>" alt="" width="250" class="img-circle">
         <p> <%= @item.item_name %> </p>
+        <p> <%= @item.category %> </p>
 
 
         <%= render'shared/carousel' %>
@@ -38,29 +39,16 @@
     </div>
 
 
-
-    <div class="stat">
-      <div class="stat-content">
-         <p> <%= link_to " + Add more items", items_path %> </p>
-        <img src="<%= image_url(@item.photo_item) %>" alt="" width="80" class="img-circle">
-        <p> <%= @item.item_name %> </p>
+    <% @suggested_items.each do |i| %>
+      <div class="stat">
+        <div class="stat-content">
+           <p> <%= link_to " + Add more items", items_path %> </p>
+          <img src="<%= image_url(i.photo_item) %>" alt="" width="80" class="img-circle">
+          <p> <%= i.item_name %> </p>
+          <p> <%= i.category %> </p>
+        </div>
       </div>
-    </div>
-    <div class="stat">
-      <div class="stat-content">
-         <p><%= link_to " + Add more items", items_path %></p>
-        <img src="<%= image_url(@item.photo_item) %>" alt="" width="80" class="img-circle">
-        <p> <%= @item.item_name %> </p>
-      </div>
-    </div>
-
-    <div class="stat">
-      <div class="stat-content">
-         <p><%= link_to " + Add more items", items_path %></p>
-        <img src="<%= image_url(@item.photo_item) %>" alt="" width="80" class="img-circle">
-        <p> <%= @item.item_name %> </p>
-      </div>
-    </div>
+    <% end %>
 
   </div>
 </div>

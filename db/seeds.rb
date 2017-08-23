@@ -41,7 +41,7 @@ address: "Avenida Epitacio Pessoa 2900 Rio de Janeiro"
 
 Item.create! ({
 category: "Jacket",
-item_name: "red jacket",
+item_name: "pink jacket",
 size: "M",
 price: 100,
 photo_item:"jacket1.jpg",
