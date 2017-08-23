@@ -19,6 +19,10 @@ class ItemsController < ApplicationController
     end
   end
 
+  def my_items
+    @items = current_user.items
+  end
+
   def show
     @purchase = Purchase.new
     @item = Item.find(params[:id])
