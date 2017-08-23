@@ -6,16 +6,18 @@ class ItemsController < ApplicationController
 
     if params[:address].present?
       @items = @items.near(params[:address], 20)
-
     else
       @items = Item.where.not(latitude: nil, longitude: nil)
+    end
+
+    if params[:category].present?
+      @items = @items.where(category: params[:category])
     end
 
 
     @hash = Gmaps4rails.build_markers(@items) do |item, marker|
       marker.lat item.latitude
       marker.lng item.longitude
-
     end
   end
 
