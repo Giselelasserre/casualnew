@@ -62,7 +62,7 @@ private
   def item_params
     # *Strong params*: You need to *whitelist* what can be updated by the user
     # Never trust user data!
-    params.require(:item).permit(:address, :item_name, :size, :price, :days_delivery, :description, :photo_item)
+    params.require(:item).permit(:category, :address, :item_name, :size, :price, :days_delivery, :description, :photo_item)
   end
 end
 
