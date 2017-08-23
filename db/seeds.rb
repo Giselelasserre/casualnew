@@ -15,7 +15,7 @@ user = User.create({
 puts "Creating user..... "
 
 Item.create! ({
-category: "Blouse",
+category:"Blouse",
 item_name: "blouse",
 size: "M",
 price: 100,
@@ -54,7 +54,6 @@ address: "Avenida Atlantica 500 Rio de Janeiro"
 
 Item.create! ({
 category: "Jacket",
-category: "jacket" ,
 item_name: "denim jacket",
 size: "L",
 price: 300,
