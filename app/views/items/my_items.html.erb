@@ -1,0 +1,26 @@
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Item name</th>
+        <th>ID</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @items.each do |item| %>
+      <tr>
+        <td>
+          <%= item.item_name %>
+        </td>
+        <td>
+          <%= item.id %>
+        </td>
+        <td>
+          <%= item.purchases.any? ? "Sold" : "Available" %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
