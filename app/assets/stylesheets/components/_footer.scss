@@ -15,7 +15,7 @@
   color: #6B8E23;
   opacity: 0.50;
   text-decoration: none;
-  font-size: 30px;
+  font-size: 40px;
   padding: 0px 10px;
 }
 .footer-links a:hover {
@@ -24,16 +24,47 @@
 .footer .fa-heart {
   color: #D23333;
 }
+
 .footer-list {
+    align: center;
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
+
 .footer-list li {
+    margin-left: 80px;
     display: inline-block;
-    color: white;
+    color: #D4D6C8;
+    opacity: 0.50;
     margin-right: 12px;
+    text-decoration: none;
+}
+
+.footer-list a {
+    margin-left: 80px;
+    display: inline-block;
+    color: #D4D6C8;
+    margin-right: 12px;
+    text-decoration: none;
+}
+
+div.hidden { display: none; }
+
+.footer-list li:hover {
+  opacity: 1;
+}
+.footer-list a:hover {
+  opacity: 1;
 }
 .footer-list-title {
   color: rgba(0, 0, 0, 0.64);
+}
+
+#show-company {
+  cursor: pointer;
+}
+
+#show-contact {
+  cursor: pointer;
 }
