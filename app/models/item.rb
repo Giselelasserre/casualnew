@@ -6,6 +6,7 @@ class Item < ApplicationRecord
   belongs_to :owner, class_name: "User", foreign_key: "user_id"
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
+  has_attachments :photo_items, maximum: 10
 
   def suggestions
      return Item.where.not(category: self.category).sample(3)

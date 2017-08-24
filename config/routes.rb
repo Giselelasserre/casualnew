@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
 
 
-
+  mount Attachinary::Engine => "/attachinary"
 
   get "/my_items", to: "items#my_items"
 
