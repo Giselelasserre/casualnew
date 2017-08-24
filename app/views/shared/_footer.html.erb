@@ -1,9 +1,17 @@
 <div class="footer">
 <div>
   <ul class="footer-list">
-    <li>Company</li>
-    <li>Contact us</li>
-    <li>Team</li>
+    <li>
+      <div id="show-company">Company </div>
+      <div id="hidden-company" class="hidden">We are a nice company.</div>
+    </li>
+    <li>
+      <div id="show-contact">Contact us</div>
+      <div id="hidden-contact" class="hidden">lwcasual@gmail.com</div>
+    </li>
+    <li>
+      <%= link_to "The Team", who_we_are_path %>
+    </li>
   </ul>
 
 </div>
@@ -19,3 +27,5 @@
     This footer is made with <i class="fa fa-heart"></i> at Le Wagon
   </div> -->
 </div>
+
+
