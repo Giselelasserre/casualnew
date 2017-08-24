@@ -3,7 +3,8 @@
     <thead>
       <tr>
         <th>Item name</th>
-        <th>ID</th>
+        <th>User_id</th>
+        <th>Item_id</th>
         <th>Status</th>
         <th>Edit</th>
         <th>Delete</th>
@@ -16,6 +17,9 @@
           <%= item.item_name %>
         </td>
         <td>
+          <%= item.user_id %>
+        </td>
+        <td>
           <%= item.id %>
         </td>
         <td>
@@ -23,15 +27,15 @@
         </td>
 
         <td>
-        <%= link_to "Edit", edit_item_path(item) %>
+          <%= link_to "Edit", edit_item_path(item) %>
 
         </td>
 
         <td>
          <%= link_to "Delete", item_path(item), method: :delete %>
-      </td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
+       </td>
+     </tr>
+     <% end %>
+   </tbody>
+ </table>
 </div>
