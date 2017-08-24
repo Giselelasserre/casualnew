@@ -9,6 +9,7 @@ class ItemsController < ApplicationController
 
     else
       @items = Item.available.where.not(latitude: nil, longitude: nil)
+      redirect_to items_path, notice: "Sorry, this item is not available!"
     end
 
 
