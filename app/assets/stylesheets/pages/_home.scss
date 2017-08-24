@@ -12,8 +12,17 @@ body {
 }
 
 .search-bar {
-  border-radius: 30px
+  -webkit-appearance: none;
+  -webkit-border-radius: 20px;
 }
+
+.select-input {
+  padding-top: 0;
+}
+
+// .search-bar a{
+//   border-radius: 30px;
+// }
 
 .banner-home {
   text-align: center;
@@ -50,7 +59,7 @@ h1.white {
 .buton-purple {
   background-color: #b220a6;
   border: 0;
-  border-radius: 45px;
+  border-radius: 10px;
   height: 50px;
   width: 120px;
   // position: absolute;
