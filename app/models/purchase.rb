@@ -4,4 +4,10 @@ class Purchase < ApplicationRecord
   validates :item, presence: true
   validates :user, presence: true
 
+  after_create :change_status_item
+
+  def change_status_item
+    self.item.update(available: false)
+  end
+
 end
