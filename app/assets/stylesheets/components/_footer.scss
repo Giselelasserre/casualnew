@@ -1,9 +1,9 @@
 .footer {
-  background: #F4F4F4;
+  background: #393E46;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
+  height: 80px;
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
 }
@@ -12,10 +12,10 @@
   align-items: center;
 }
 .footer-links a {
-  color: black;
-  opacity: 0.15;
+  color: #6B8E23;
+  opacity: 0.50;
   text-decoration: none;
-  font-size: 40px;
+  font-size: 30px;
   padding: 0px 10px;
 }
 .footer-links a:hover {
@@ -26,7 +26,13 @@
 }
 .footer-list {
     list-style-type: none;
-    padding-left: 0;
+    margin: 0;
+    padding: 0;
+}
+.footer-list li {
+    display: inline-block;
+    color: white;
+    margin-right: 12px;
 }
 .footer-list-title {
   color: rgba(0, 0, 0, 0.64);
