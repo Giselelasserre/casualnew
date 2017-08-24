@@ -12,8 +12,7 @@
         <%= f.input :address %>
         <%= f.input :price %>
         <%= f.input :days_delivery %>
-        <%= f.file_field :picture %>
-
+        <%= f.input :photo_items, as: :attachinary %>
         <%= f.submit "Create an Item", class: "btn btn-primary btn-lg btn-block" %>
       <% end %>
     </div>

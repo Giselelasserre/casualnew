@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   get "/who_we_are", to: "pages#who_we_are"
 
+  mount Attachinary::Engine => "/attachinary"
 
   get "/my_items", to: "items#my_items"
 

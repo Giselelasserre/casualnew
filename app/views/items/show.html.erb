@@ -4,7 +4,9 @@
   <div class="profile text-center">
     <div class="main">
       <div class="main-content">
-        <img src="<%= image_url(@item.photo_item) %>" alt="" width="250" class="img-circle">
+      <% @item.photo_items.each do |photo| %>
+  <%= cl_image_tag photo.path, width: 250, height: 300, crop: :fill, class: "img-circle" %>
+<% end %>
         <p> <%= @item.item_name %> </p>
         <p> <%= @item.category %> </p>
 
@@ -43,7 +45,9 @@
       <div class="stat">
         <div class="stat-content">
            <p> <%= link_to " + Add more items", items_path %> </p>
-          <img src="<%= image_url(i.photo_item) %>" alt="" width="80" class="img-circle">
+           <% if i.photo_items.any? %>
+             <%= cl_image_tag i.photo_items.first.path, width: 80, crop: :fill, class: "img-circle" %>
+          <% end %>
           <p> <%= i.item_name %> </p>
           <p> <%= i.category %> </p>
         </div>

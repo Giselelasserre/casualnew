@@ -2,13 +2,13 @@ class ItemsController < ApplicationController
   skip_before_filter :authenticate_user!, only: [:index, :show]
 
   def index
-    @items = Item.all
+    @items = Item.available
 
     if params[:address].present?
       @items = @items.near(params[:address], 20)
 
     else
-      @items = Item.where.not(latitude: nil, longitude: nil)
+      @items = Item.available.where.not(latitude: nil, longitude: nil)
     end
 
 
@@ -61,25 +61,34 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
-    redirect_to edit_item_path(@item)
-    @item.user_id = current_user
 
-    # this add by gisele 23 aug
+
   end
 
   def update
     @item = Item.find(params[:id])
     @item.update(item_params)
 
-    redirect_to items_path # We'll see that in a moment.
+    redirect_to item_path(@item) # We'll see that in a moment.
   end
+
+
+  def destroy
+    @item = Item.find(params[:id])
+    @purchases = @item.purchases
+    @item.destroy
+    redirect_to my_items_path
+
+  end
+
+
 
 private
 
   def item_params
     # *Strong params*: You need to *whitelist* what can be updated by the user
     # Never trust user data!
-    params.require(:item).permit(:category, :address, :item_name, :size, :price, :days_delivery, :description, :photo_item)
+    params.require(:item).permit(:category, :address, :item_name, :size, :price, :days_delivery, :description, photo_items: [])
   end
 end
 
