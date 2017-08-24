@@ -5,6 +5,8 @@
         <th>Item name</th>
         <th>ID</th>
         <th>Status</th>
+        <th>Edit</th>
+        <th>Delete</th>
       </tr>
     </thead>
     <tbody>
@@ -19,6 +21,15 @@
         <td>
           <%= item.purchases.any? ? "Sold" : "Available" %>
         </td>
+
+        <td>
+        <%= link_to "Edit", edit_item_path(item) %>
+
+        </td>
+
+        <td>
+         <%= link_to "Delete", item_path(item), method: :delete %>
+      </td>
       </tr>
       <% end %>
     </tbody>

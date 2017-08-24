@@ -7,4 +7,8 @@ class Item < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 
+  def suggestions
+     return Item.where.not(category: self.category).sample(3)
+   end
+
 end

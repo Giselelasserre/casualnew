@@ -6,9 +6,11 @@ class ItemsController < ApplicationController
 
     if params[:address].present?
       @items = @items.near(params[:address], 20)
+
     else
       @items = Item.where.not(latitude: nil, longitude: nil)
     end
+
 
     if params[:category].present?
       @items = @items.where(category: params[:category])
@@ -22,6 +24,7 @@ class ItemsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@items) do |item, marker|
       marker.lat item.latitude
       marker.lng item.longitude
+
     end
   end
 
@@ -32,12 +35,12 @@ class ItemsController < ApplicationController
   def show
     @purchase = Purchase.new
     @item = Item.find(params[:id])
+    @suggested_items = @item.suggestions
     @alert_message = "You are viewing #{@item.item_name}"
     @item_coordinates = { lat: @item.latitude, lng: @item.longitude }
     @hash = Gmaps4rails.build_markers(@item) do |item, marker|
       marker.lat item.latitude
       marker.lng item.longitude
-
     end
   end
 
@@ -58,6 +61,10 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+    redirect_to edit_item_path(@item)
+    @item.user_id = current_user
+
+    # this add by gisele 23 aug
   end
 
   def update

@@ -4,23 +4,22 @@ class PagesController < ApplicationController
   def home
   end
 
-  def show-suggestion
+  def showsuggestion
     if Item.where(category: "Pant")
      render @item_photo_item.where.category.not(id: self.id)
-    else
-     Item.where(category: "Shirt")
+
+   elsif Item.where(category: "Shirt")
      render @item_photo_item.where.category.not(id: self.id)
 
-    else
-     Item.where(category: "Jacket")
+   elsif Item.where(category: "Jacket")
      render @item_photo_item.where.category.not(id: self.id)
 
-     else
-     Item.where(category: "Accessories")
+   else Item.where(category: "Accessories")
+
      render @item_photo_item.where.category.not(id: self.id)
 
-    end
+   end
 
-  end
+ end
 
 end
