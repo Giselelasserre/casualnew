@@ -12,6 +12,15 @@ class ItemsController < ApplicationController
     end
 
 
+    if params[:category].present?
+      @items = @items.where(category: params[:category])
+    end
+
+    if params[:size].present? && params[:size] != "All"
+      @items = @items.where(size: params[:size])
+    end
+
+
     @hash = Gmaps4rails.build_markers(@items) do |item, marker|
       marker.lat item.latitude
       marker.lng item.longitude

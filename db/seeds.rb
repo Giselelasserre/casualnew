@@ -61,7 +61,6 @@ photo_item: "jacket2.jpg",
 days_delivery: 3,
 user_id: 4,
 owner: user,
-category: jacket,
 address: "Rua Barata Ribeiro 300 Rio de Janeiro"
 })
 
