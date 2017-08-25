@@ -48,7 +48,6 @@
            <% if i.photo_items.any? %>
              <%= cl_image_tag i.photo_items.first.path, width: 80, crop: :fill, class: "img-circle" %>
           <% end %>
-          <p> <%= i.item_name %> </p>
           <p> <%= i.category %> </p>
         </div>
       </div>
