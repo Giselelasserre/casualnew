@@ -14,6 +14,10 @@ Rails.application.configure do
   config.consider_all_requests_local = true
 
   # Enable/disable caching. By default caching is disabled.
+
+  config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
   if Rails.root.join('tmp/caching-dev.txt').exist?
     config.action_controller.perform_caching = true
 
