@@ -6,12 +6,9 @@ class ItemsController < ApplicationController
 
     if params[:address].present?
       @items = @items.near(params[:address], 20)
-
     else
       @items = Item.available.where.not(latitude: nil, longitude: nil)
-      flash[:notice] = "Sorry, this item is not available!"
     end
-
 
     if params[:category].present?
       @items = @items.where(category: params[:category])
@@ -21,11 +18,13 @@ class ItemsController < ApplicationController
       @items = @items.where(size: params[:size])
     end
 
+    if @items.none?
+      flash.now[:alert] = "Sorry, this item is not currently available!"
+    end
 
     @hash = Gmaps4rails.build_markers(@items) do |item, marker|
       marker.lat item.latitude
       marker.lng item.longitude
-
     end
   end
 
