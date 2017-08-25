@@ -126,4 +126,16 @@ owner: user,
 address: "Rua Parana Curitiba"
 })
 
+Item.create! ({
+category:"Shirt",
+item_name: "White shirt",
+size: "S",
+price: 50,
+photo_item_urls: ["http://res.cloudinary.com/ddfvlr6h2/image/upload/v1503681915/11284_Agnie_002_xyduwp.png"],
+days_delivery: 5,
+user_id: 10,
+owner: user,
+address: "Rua Cupertino Durao 50 Rio de Janeiro"
+})
+
 puts 'Finished the seeding!'

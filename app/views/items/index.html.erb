@@ -1,5 +1,5 @@
 <div class="map-wrapper">
-<h1> Nice itens, every day </h1>
+<h1> Nice items, everyday </h1>
   <div class="grid-container">
     <div class="cards_container">
       <% @items.each do |item| %>
@@ -13,7 +13,7 @@
                          $ <%= item.price %> </p>
               </div>
               <p><%= item.description %></p>
-              <p> <%= link_to "See items details", item_path(item) %></p>
+              <p> <%= link_to "See item details", item_path(item) %></p>
             </div>
 
             <% if item.photo_items.any? %>
