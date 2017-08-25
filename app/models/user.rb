@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_many :purchases
   has_many :purchased_item, through: :purchases, class_name: "Item", source: "item"
   has_many :items, dependent: :destroy
-
+  after_create :send_welcome_email
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [:facebook]
@@ -29,4 +29,11 @@ class User < ApplicationRecord
 
     return user
   end
+
+  private
+
+  def send_welcome_email
+    UserMailer.welcome(self).deliver_now
+  end
+
 end
