@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :purchases, only: [:create]
   end
 
-  get "/who_we_are", to: "pages#who_we_are"
+  get "/team", to: "pages#team"
   get "/contact", to: "pages#contact"
   get "/company", to: "pages#company"
 

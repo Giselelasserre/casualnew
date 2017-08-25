@@ -68,3 +68,16 @@ div.hidden { display: none; }
 #show-contact {
   cursor: pointer;
 }
+
+.footer > .row {
+  width: -webkit-fill-available;
+}
+
+.footer a {
+  vertical-align: -webkit-baseline-middle;
+}
+
+a.footer-better {
+  padding-left: 20px;
+  text-decoration: none;
+}

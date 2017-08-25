@@ -1,31 +1,42 @@
 <div class="footer">
-<div>
-  <ul class="footer-list">
-    <li>
-      <div id="show-company">Company </div>
-      <div id="hidden-company" class="hidden">We are a nice company.</div>
-    </li>
-    <li>
-      <div id="show-contact">Contact us</div>
-      <div id="hidden-contact" class="hidden">lwcasual@gmail.com</div>
-    </li>
-    <li>
-      <%= link_to "The Team", who_we_are_path %>
-    </li>
-  </ul>
+  <div class="row">
+  <div class="col-xs-12 col-md-8">
+    <div>
+      <!-- <ul class="footer-list"> -->
+        <!-- <li>
+          <div id="show-company">Company </div>
+          <div id="hidden-company" class="hidden">We are a nice company.</div>
+        </li>
+        <li>
+          <div id="show-contact">Contact us</div>
+          <div id="hidden-contact" class="hidden">lwcasual@gmail.com</div>
+        </li>
+        <li>
+          <%#= link_to "The Team", who_we_are_path %>
+        </li> -->
 
-</div>
-  <div class="footer-links">
-    <a href="#"><i class="fa fa-google-plus-official"></i></a>
-    <a href="https://www.facebook.com/?sw_fnr_id=1942285717&fnr_t=0"><i class="fa fa-facebook"></i></a>
-    <a href="https://br.pinterest.com/"><i class="fa fa-pinterest"></i></a>
-    <a href="#"><i class="fa fa-youtube"></i></a>
-    <a href="#"><i class="fa fa-instagram"></i></a>
 
+      <!-- </ul> -->
+
+    <%= link_to "Company", company_path, class: "footer-better" %>
+    <%= link_to "Contact us", contact_path, class: "footer-better" %>
+    <%= link_to "Team", team_path, class: "footer-better"  %>
+    </div>
+    </div>
+    <div class="col-xs-12 col-md-4">
+      <div class="footer-links">
+        <a href="#"><i class="fa fa-google-plus-official"></i></a>
+        <a href="https://www.facebook.com/?sw_fnr_id=1942285717&fnr_t=0"><i class="fa fa-facebook"></i></a>
+        <a href="https://br.pinterest.com/"><i class="fa fa-pinterest"></i></a>
+        <a href="#"><i class="fa fa-youtube"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+      </div>
+    </div>
   </div>
   <!-- <div class="footer-copyright">
     This footer is made with <i class="fa fa-heart"></i> at Le Wagon
   </div> -->
 </div>
+
 
 
