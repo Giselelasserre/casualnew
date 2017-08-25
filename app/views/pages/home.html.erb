@@ -28,63 +28,26 @@
     <p>Glamorous and Fancy</p>
   </div>
   <div class="row">
-    <div class="col-xs-12 col-md-6 col-lg-4">
-      <div class="card">
-        <div class="card-body pants">
-          <span class="card-category">Pants</span>
-          <div class="card-description">
-            <h2>Cindy's Pants</h2>
-            <p>Great Pants</p>
-          </div>
-          <%= image_tag "face1.jpg", class: "card-user avatar avatar-large" %>
-          <a class="card-link" href="#"></a>
-        </div>
-        <div class="card-footer">
-          <p>Posted on 22/11/19</p>
-          <div class="controls">
-            <a href="#"><i class="fa fa-star"></i></a>
-            <a href="#"><i class="fa fa-heart"></i></a>
-            <a href="#"><i class="fa fa-share"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
 
+    <% @last_items.each do |item| %>
     <div class="col-xs-12 col-md-6 col-lg-4">
       <div class="card">
-        <div class="card-body jacket">
-          <span class="card-category">Jacket</span>
+        <% if item.photo_items.any? %>
+        <div class="card-body" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)),
+         url('<%= cl_image_path item.photo_items.first.path, height: 300, width: 400, crop: :fill %>')">
+        <% else %>
+          <div class="card-body pants">
+         <% end %>
+          <span class="card-category"><%= item.category %></span>
           <div class="card-description">
-            <h2>Sall's jacket</h2>
-            <p>Great jackets</p>
+            <h2><%= item.item_name %></h2>
+            <p><%= item.address %></p>
           </div>
-          <%= image_tag "face2.jpg", class: "card-user avatar avatar-large" %>
-          <a class="card-link" href="#"></a>
-        </div>
-        <div class="card-footer">
-          <p>Posted on 22/11/19</p>
-          <div class="controls">
-            <a href="#"><i class="fa fa-star"></i></a>
-            <a href="#"><i class="fa fa-heart"></i></a>
-            <a href="#"><i class="fa fa-share"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="col-xs-12 col-md-6 col-lg-4">
-      <div class="card">
-        <div class="card-body blouse">
-          <span class="card-category">Blouse</span>
-          <div class="card-description">
-            <h2>Ana's blouse</h2>
-            <p>Fancy blouse</p>
-          </div>
-          <%= image_tag "face3.jpg", class: "card-user avatar avatar-large" %>
-          <a class="card-link" href="#"></a>
+          <%= link_to "", item_path(item), class: "card-link" %>
         </div>
         <div class="card-footer">
-          <p>Posted on 22/11/19</p>
+          <p>Posted on <%= item.created_at.to_date %></p>
           <div class="controls">
             <a href="#"><i class="fa fa-star"></i></a>
             <a href="#"><i class="fa fa-heart"></i></a>
@@ -93,6 +56,8 @@
         </div>
       </div>
     </div>
+    <% end %>
+
   </div>
 </div>
 
