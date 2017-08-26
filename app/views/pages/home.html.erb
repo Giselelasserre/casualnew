@@ -3,10 +3,11 @@
   <div class="banner-home" >
     <div class="banner-content">
       <h1 class="white">Buy fashion with Casual</h1>
-      <p>Dress well, everyday</p>
+      <div class= "well-dressed">Well Dressed, everyday</div>
       <form action="/items" class="form-inline">
 
-        <%= collection_select(:item, :category, Item::CATEGORIES, :to_s, :to_s, {}, class: "form-control input-lg search-bar select-input", name: "category", placeholder: "e.g:Pants,Blouse,Shirt" ) %>
+
+        <%= collection_select(:item, :category, Item::CATEGORIES, :to_s, :to_s, {}, class: "form-control input-lg search-bar", name: "category", placeholder: "e.g:Pants,Blouse,Shirt" ) %>
 
         <input type="text" name="address" class="form-control input-lg search-bar" placeholder="Where?">
 
@@ -21,26 +22,26 @@
       </form>
     </div>
   </div>
-</div>
 
-<div class="container">
-  <div class="text-center text-title">
 
-    <h2>Glamour and Fancy</h2>
-  </div>
-  <div class="row">
+  <div class="container">
+    <div class="text-center text-title well-dressed margin-top ">Glamour and Fancy</div>
 
-    <% @last_items.each do |item| %>
-    <div class="col-xs-12 col-md-6 col-lg-4">
-      <div class="card">
-        <% if item.photo_items.any? %>
-        <div class="card-body" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)),
-         url('<%= cl_image_path item.photo_items.first.path, height: 300, width: 400, crop: :fill %>')">
-        <% else %>
+     <!--  <div class="well-dressed margin-top">Glamour and Fancy</div>
+    </div> -->
+    <div class="row">
+
+      <% @last_items.each do |item| %>
+      <div class="col-xs-12 col-md-6 col-lg-4">
+        <div class="card ">
+          <% if item.photo_items.any? %>
+          <div class="card-body" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)),
+          url('<%= cl_image_path item.photo_items.first.path, height: 300, width: 400, crop: :fill %>')">
+          <% else %>
           <div class="card-body pants">
-         <% end %>
-          <span class="card-category"><%= item.category %></span>
-          <div class="card-description">
+           <% end %>
+           <span class="card-category"><%= item.category %></span>
+           <div class="card-description">
             <h2><%= item.item_name %></h2>
           </div>
 
@@ -60,11 +61,24 @@
 
   </div>
 </div>
-
-<div class="about" id="about">
-  <div class= "about-txt">
-    <h2>About Casual</h2>
-    <p>Casual is marketplace for online fashion.</p>
-  </div>
 </div>
+
+
+
+
+    <%= render'pages/thumbnails' %>
+
+   <div class="about" id="about">
+    <div class= "about-txt">
+      <h2>About Casual</h2>
+      <p>Casual is marketplace for online fashion.</p>
+    </div>
+  </div>
+
+
+
+</div>
+
+
+
 
