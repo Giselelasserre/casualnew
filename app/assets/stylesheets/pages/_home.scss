@@ -36,32 +36,57 @@ body {
 }
 
 .banner-home p {
-  font-size: 25px;
+  font-size: 35px;
   font-weight: lighter;
-  color: rgb(255, 255, 255);
+  color: rgb(246, 167, 92);
+  text-shadow: 0px 5px rgba(242, 242, 242, 0.5);
   margin-bottom: 30px;
 }
 
-.banner-home {
-  background-image: -webkit-linear-gradient(bottom, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), image-url('banner_home.jpg');
-  background-image: -o-linear-gradient(bottom, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), image-url('banner_home.jpg');
-  background-image: linear-gradient(to top, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), image-url('banner_home.jpg');
+// .banner-home {
+//   background-image: -webkit-linear-gradient(bottom, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), image-url('banner_home.jpg');
+//   background-image: -o-linear-gradient(bottom, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), image-url('banner_home.jpg');
+//   background-image: linear-gradient(to top, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), image-url('banner_home.jpg');
+// }
+
+
+.well-dressed{
+  font-family: 'Sedgwick Ave Display', cursive;
+  margin-bottom: 30px;
+  color: #F6A75C;
+  font-size: 50px;
+  text-shadow: 0px 5px rgba(242, 242, 242, 0.5);
+  text-align: center;
+
 }
+
+.well-dressed .margin-top {
+  margin-top: 15px;
+  // padding-top: 50px;
+  }
+
+.banner-home {
+  background-image: -webkit-linear-gradient(bottom, rgba(232,214,174,0.6) 0%, rgba(232,214,174,0.6) 50%), image-url('banner_home.jpg');
+  background-image: -o-linear-gradient(bottom, rgba(232,214, 174,0.6) 0%, rgba(232,214, 174,0.6)  50%), image-url('banner_home.jpg');
+  background-image: linear-gradient(to top, rgba(232,214, 174,0.6)  0%, rgba(232,214, 174,0.6)  50%), image-url('banner_home.jpg');
+}
+
 h1.white {
   margin-top: -80px;
-  color: white;
+  color: #EB3A7E;
   font-size: 50px;
-  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  text-shadow: 0px 5px rgba(242, 242, 242, 0.5);
   text-align: center;
 }
 
 
 .buton-purple {
-  background-color: #b220a6;
+  background-color: #F6635C;
   border: 0;
   border-radius: 10px;
   height: 50px;
   width: 120px;
+  color: white;
   // position: absolute;
   // top: 0;
   // right: 0;
@@ -74,9 +99,10 @@ h1.white {
 .buton-purple:hover{
   background: #6b1263;
 }
+
 .card {
     flex: 1 1 auto;
-    margin: 10px;
+    // margin: 10px;
     border-radius: 1px;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
     transition: all 0.3s ease;
@@ -126,8 +152,8 @@ h1.white {
 
 .card-link {
     position: absolute;
-    top: 0;
-    bottom: 0;
+    // top: 0;
+    // bottom: 0;
     width: 100%;
     z-index: 2;
     background: black;
@@ -193,9 +219,12 @@ h1.white {
   margin: 0;
   margin-bottom: 100px;
   font-family: 'Varela Round', sans-serif;
+  color: white;
   padding: 30px;
-  background-color: lightgray;
-
+  background-color: #F6635C;
 
   }
+
+
+
 

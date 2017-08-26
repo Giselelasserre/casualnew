@@ -7,7 +7,7 @@
   <%= cl_image_tag photo.path, width: 250, height: 300, crop: :fill, class: "img-circle" %>
 <% end %>
         <p> <%= @item.item_name %> </p>
-   <!--      <p> <%= @item.category %> </p> -->
+        <p> <%= @item.category %> </p>
 
 
         <%= render'shared/carousel' %>
@@ -19,37 +19,21 @@
 
 
     <div class="description">
-
-    <div class="rating">
-        <div class="stars">
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-        </div>
-        <span class="review-no">2 reviews</span>
-
-        </div>
       <div class="description-content">
 
-       <!--  <p class="text-justify"> -->
+        <p class="text-justify">
 
-      <h4 class="price">price: <span><%= @item.price %></span></h4>
-
-      <h5 class="sizes">sizes:<span><%= @item.size %></span></h5>
-
-      <%= link_to "Add to cart", payment_path, class: "btn btn-primary btn-lg" %>
-
-        <!-- <p> Price in USD <%= @item.price %> </p>
+        <p> Price in USD <%= @item.price %> </p>
         <p> Size <%= @item.size %> </p>
-
+<!--
+        <p>Item Description</p>
+        <h3> <%= @item.description %> </h3> -->
           This is a nice <%= @item.item_name %> available on the size <strong> <%= @item.size %> </strong> .
         </p>
 
-        <p>The <!-- ><!-- estimate time to get to you is --> <%#= @item.days_delivery %> <!-- days!</p> -->
+        <p>The estimate time to get to you is <%= @item.days_delivery %> days!</p>
 
-
+        <%= link_to "Buy this item", payment_path, class: "btn btn-primary btn-lg" %>
 
 
       </div>
@@ -70,32 +54,3 @@
 
   </div>
 </div>
-
-
-
-    <%= render'pages/show-product' %>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- <
-
-
-
-
-
