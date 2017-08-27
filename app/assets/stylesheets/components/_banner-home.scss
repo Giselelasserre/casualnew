@@ -1,0 +1,56 @@
+
+.banner-lfb{
+  text-align: center;
+  height: 700px;
+  width:100%;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // background-image: -webkit-linear-gradient(bottom, rgba(232,214,174,0.6) 0%, rgba(232,214,174,0.6) 50%), image-url('banner_home.jpg');
+  // background-image: -o-linear-gradient(bottom, rgba(232,214, 174,0.6) 0%, rgba(232,214, 174,0.6)  50%), image-url('banner_home.jpg');
+  // background-image: linear-gradient(to top, rgba(232,214, 174,0.6)  0%, rgba(232,214, 174,0.6)  50%), image-url('banner_home.jpg');
+
+}
+
+
+#lfb
+{
+position:relative;
+height:700px;
+width:100%;
+margin:0 auto;
+}
+
+#lfb img
+{
+width:100%;
+height:700px;
+position:absolute;
+left:0;
+-webkit-transition: opacity 0.3s ease-in-out;
+-moz-transition: opacity 0.3s ease-in-out;
+-o-transition: opacity 0.3s ease-in-out;
+transition: opacity 0.3s ease-in-out;
+}
+
+@keyframes lfb3FadeInOut
+{
+0% {  opacity:1;}
+45% {opacity:1;}
+55% {opacity:0;}
+100% {opacity:0;}}
+
+#lfb img.top
+{
+animation-name:lfb3FadeInOut;
+animation-timing-function: ease-in-out;
+animation-iteration-count: infinite;
+animation-duration: 5s;
+animation-direction: alternate;
+}
+
+
+
+
