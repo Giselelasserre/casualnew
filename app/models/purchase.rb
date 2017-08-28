@@ -6,6 +6,8 @@ class Purchase < ApplicationRecord
 
   after_create :change_status_item
 
+  monetize :amount_cents
+
   def change_status_item
     self.item.update(available: false)
   end
