@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170826200752) do
+ActiveRecord::Schema.define(version: 20170828165248) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,7 +33,6 @@ ActiveRecord::Schema.define(version: 20170826200752) do
   create_table "items", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "size"
-    t.float    "price"
     t.string   "item_name"
     t.integer  "days_delivery"
     t.string   "address"
@@ -44,6 +43,7 @@ ActiveRecord::Schema.define(version: 20170826200752) do
     t.float    "longitude"
     t.string   "category"
     t.boolean  "available",     default: true
+    t.integer  "price_cents",   default: 0,    null: false
     t.index ["user_id"], name: "index_items_on_user_id", using: :btree
   end
 

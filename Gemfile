@@ -17,6 +17,8 @@ gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
 gem 'coffee-rails'
 gem "letter_opener", group: :development
+gem 'money-rails'
+gem 'stripe'
 
 source 'https://rails-assets.org' do
 gem "rails-assets-underscore"

@@ -35,7 +35,7 @@
 
        <!--  <p class="text-justify"> -->
 
-      <h4 class="price">price: <span><%= @item.price %></span></h4>
+      <p>Amount: <%= humanized_money_with_symbol(@item.price) %></p>
 
       <h5 class="sizes">sizes:<span><%= @item.size %></span></h5>
 

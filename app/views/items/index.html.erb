@@ -9,7 +9,7 @@
             <div class="card-description">
               <div>
                 <h2> <%= item.item_name %> </h2>
-                  <p> <%= item.size %>
+                  <p>Amount: <%= humanized_money_with_symbol(item.price) %></p>
                          $ <%= item.price %> </p>
               </div>
               <p><%= item.description %></p>
