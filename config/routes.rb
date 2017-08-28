@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :items do
-    resources :purchases, only: [:create]
+    resources :purchases, only: [:create] do
+      resources :payments, only: [ :new,:create]
+  end
   end
 
   get "/team", to: "pages#team"
