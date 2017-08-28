@@ -10,9 +10,6 @@
     <%= action_cable_meta_tag %>
      <%= stylesheet_link_tag 'application', media: 'all' %>
 
-<!-- code for mailchimp next line   -->
-     <!-- <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/fe80c790c756bb0617989b4c2/80a673c693c9be0024bc3125c.js");</script> -->
-      <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us16.list-manage.com","uuid":"fe80c790c756bb0617989b4c2","lid":"061079f577"}) })</script>
   </head>
   <body>
     <%= render 'shared/navbar' %>
@@ -30,5 +27,8 @@
     <%= cloudinary_js_config %>
 
     <%= yield(:after_js) %>
+<!-- code for mailchimp next line   -->
+     <!-- <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/fe80c790c756bb0617989b4c2/80a673c693c9be0024bc3125c.js");</script> -->
+      <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us16.list-manage.com","uuid":"fe80c790c756bb0617989b4c2","lid":"061079f577"}) })</script>
   </body>
 </html>
