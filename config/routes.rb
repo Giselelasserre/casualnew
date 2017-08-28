@@ -3,10 +3,9 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
-  resources :items do
-    resources :purchases, only: [:create] do
-      resources :payments, only: [ :new,:create]
-  end
+  resources :items
+  resources :purchases, only: [:show, :create] do
+    resources :payments, only: [:new, :create]
   end
 
   get "/team", to: "pages#team"
