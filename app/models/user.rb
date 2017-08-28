@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_many :purchases
   has_many :purchased_item, through: :purchases, class_name: "Item", source: "item"
   has_many :items, dependent: :destroy
-  # after_create :send_welcome_email
+  after_create :send_welcome_email
 
   has_attachments :avatar
 
