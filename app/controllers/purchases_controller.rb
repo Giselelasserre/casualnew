@@ -6,7 +6,8 @@ def create
     @purchase.user = current_user
 
     if @purchase.save
-      redirect_to item_path(@item), notice: "Purchase is Done!"
+      # redirect_to item_path(@item), notice: "Purchase is Done!"
+      redirect_to new_purchase_payment_path(order)
     else
       flash.now[:alert] = @purchase.errors.full_messages.join(', ')
       render "items/show"

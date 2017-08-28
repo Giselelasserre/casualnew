@@ -9,7 +9,7 @@ class Item < ApplicationRecord
   after_create :send_confirmation_email
 
   has_attachments :photo_items, maximum: 10
-  monetize :price_pennies
+  monetize :price_cents
 
   def self.available
     where(available: true)
