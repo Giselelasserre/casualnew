@@ -1,4 +1,8 @@
-<%= simple_form_for([ user, review ]) do |form| %>
+<%= simple_form_for([ @user, @review ]) do |form| %>
   <%= form.input :content, as: :text %>
   <%= form.button :submit %>
+
 <% end %>
+
+
+<!-- Addcionei o @item, nas estava original -->

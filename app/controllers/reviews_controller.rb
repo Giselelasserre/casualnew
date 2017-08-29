@@ -4,7 +4,12 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.user = @user
     if @review.save
-      render 'users/show'
+      redirect_to items_path(@review.item)
+      # redirect_to items_path(@item.owner, item_id: @item.id)
+      # original redirect_to items_path(@review.item)
+      # redirect_to items_path(item_id: @item.id)
+    else
+      render :new
     end
   end
 
