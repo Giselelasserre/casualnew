@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get "/my_items", to: "items#my_items"
 
   get "/payment", to: "purchases#payment"
+  get "/status_payment", to: "payments#status_payment"
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

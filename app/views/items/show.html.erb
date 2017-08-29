@@ -39,10 +39,9 @@
 
       <h5 class="sizes">sizes:<span><%= @item.size %></span></h5>
 
-      <%= link_to "Add to cart", payment_path, class: "btn btn-primary btn-lg" %>
       <%= form_tag purchases_path do %>
         <%= hidden_field_tag 'item_id', @item.id %>
-        <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+        <%= submit_tag 'Add to cart', class: 'btn btn-primary' %>
       <% end %>
 
         <!-- <p> Price in USD <%= @item.price %> </p>

@@ -15,7 +15,7 @@ class PurchasesController < ApplicationController
     #   render "items/show"
     # end
     item = Item.find(params[:item_id])
-    purchase = Purchase.create!(item: item, amount: item.price, user: current_user)
+    purchase = Purchase.create!(item: item, amount: item.price, user: current_user, status: status)
 
     redirect_to new_purchase_payment_path(purchase)
   end
@@ -27,7 +27,7 @@ class PurchasesController < ApplicationController
   private
 
   def purchase_params
-    params.require(:purchase).permit(:item, :date, :amount_cents, :payment )
+    params.require(:purchase).permit(:item, :date, :amount_cents, :payment, :status )
   end
 end
 
