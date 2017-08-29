@@ -5,7 +5,7 @@ class PaymentsController < ApplicationController
   end
 
   def create
-      customer = Stripe::User.create(
+      customer = Stripe::Customer.create(
       source: params[:stripeToken],
       email:  params[:stripeEmail]
     )
@@ -13,7 +13,7 @@ class PaymentsController < ApplicationController
     charge = Stripe::Charge.create(
       customer:     customer.id,   # You should store this customer id and re-use it.
       amount:       @purchase.amount_cents, # or amount_pennies
-      description:  "Payment for Casual #{@purchase.item_name} for order #{@purchase.id}",
+      description:  "Payment for Casual #{@purchase.item.item_name} for order #{@purchase.id}",
       currency:     @purchase.amount.currency
     )
 
