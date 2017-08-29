@@ -8,6 +8,10 @@ Rails.application.routes.draw do
     resources :payments, only: [:new, :create]
   end
 
+  resources :users, only: [ :index, :show ] do
+    resources :reviews, only: :create
+  end
+
   get "/team", to: "pages#team"
   get "/contact", to: "pages#contact"
   get "/company", to: "pages#company"
