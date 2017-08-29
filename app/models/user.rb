@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :reviews, dependent: :destroy
   after_create :send_welcome_email
 
-  has_attachments :avatar
+  has_attachment :avatar
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [:facebook]
