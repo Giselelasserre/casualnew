@@ -6,23 +6,30 @@
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
     <li data-target="#myCarousel" data-slide-to="1"></li>
     <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
   </ol>
 
 
   <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-    <div class="item active">
-      <img src="<%= image_path('jacket1b.jpg') %>" >
+  <% if @item.photo_items.count == 1 %>
+    <div class="carousel-inner">
+      <div class="item active">
+        <%= cl_image_tag @item.photo_items.first.path %>
+      </div>
     </div>
+  <% else %>
+    <div class="carousel-inner">
+      <div class="item active">
+        <%= cl_image_tag @item.photo_items.first.path %>
+      </div>
 
-    <div class="item">
-      <img src="<%= image_path('jacket1c.jpg') %>" >
+      <% @item.photo_items[1..-1].each do |photo| %>
+        <div class="item">
+          <%= cl_image_tag photo.path %>
+        </div>
+      <%end %>
     </div>
-
-    <div class="item">
-     <img src="<%= image_path('jacket1d.jpg') %>" >
-    </div>
-  </div>
+    <% end %>
 
   <!-- Left and right controls -->
   <a class="left carousel-control" href="#myCarousel" data-slide="prev">
