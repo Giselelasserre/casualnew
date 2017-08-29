@@ -43,11 +43,6 @@ body {
   margin-bottom: 30px;
 }
 
-// .banner-home {
-//   background-image: -webkit-linear-gradient(bottom, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), image-url('banner_home.jpg');
-//   background-image: -o-linear-gradient(bottom, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), image-url('banner_home.jpg');
-//   background-image: linear-gradient(to top, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), image-url('banner_home.jpg');
-// }
 
 
 .well-dressed{
@@ -65,11 +60,11 @@ body {
   // padding-top: 50px;
   }
 
-.banner-home {
-  background-image: -webkit-linear-gradient(bottom, rgba(232,214,174,0.6) 0%, rgba(232,214,174,0.6) 50%), image-url('banner_home.jpg');
-  background-image: -o-linear-gradient(bottom, rgba(232,214, 174,0.6) 0%, rgba(232,214, 174,0.6)  50%), image-url('banner_home.jpg');
-  background-image: linear-gradient(to top, rgba(232,214, 174,0.6)  0%, rgba(232,214, 174,0.6)  50%), image-url('banner_home.jpg');
-}
+// .banner-home {
+//   background-image: -webkit-linear-gradient(bottom, rgba(232,214,174,0.6) 0%, rgba(232,214,174,0.6) 50%), image-url('banner_home.jpg');
+//   background-image: -o-linear-gradient(bottom, rgba(232,214, 174,0.6) 0%, rgba(232,214, 174,0.6)  50%), image-url('banner_home.jpg');
+//   background-image: linear-gradient(to top, rgba(232,214, 174,0.6)  0%, rgba(232,214, 174,0.6)  50%), image-url('banner_home.jpg');
+// }
 
 h1.white {
   margin-top: -80px;
@@ -225,6 +220,8 @@ h1.white {
 
   }
 
-
+.banner-content {
+  z-index: 1;
+}
 
 

@@ -8,6 +8,11 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def new
+    @user = User.find(params[:user_id])
+    @review = Review.new
+  end
+
   private
 
   def review_params

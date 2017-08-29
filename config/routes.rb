@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [ :index, :show ] do
-    resources :reviews, only: :create
+    resources :reviews, only: [:create, :new]
   end
 
   get "/team", to: "pages#team"
@@ -25,6 +25,7 @@ Rails.application.routes.draw do
 
   get "/payment", to: "purchases#payment"
   get "/status_payment", to: "payments#status_payment"
+
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
