@@ -5,7 +5,7 @@ class PaymentsController < ApplicationController
   end
 
   def create
-    customer = Stripe::User.create(
+    # customer = Stripe::User.create(
       source: params[:stripeToken],
       email:  params[:stripeEmail]
     )
@@ -28,5 +28,7 @@ class PaymentsController < ApplicationController
 
   def set_purchase
     @purchase = Purchase.find(params[:purchase_id])
+    # @purchase = Purchase.where(state: 'pending').find(params[:purchase_id])
+
   end
 end
