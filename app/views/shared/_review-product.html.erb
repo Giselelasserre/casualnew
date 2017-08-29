@@ -2,7 +2,7 @@
 <div class="container">
       <!--   <h3><%#= @user.avatar %> || <%#= @user.facebook_picture_url%> </h3> -->
 
-  <%= link_to "Add a Review", new_user_review_path(@item.owner) %>
+  <%= link_to "Add a Review", new_user_review_path(@item.owner, item_id: @item.id) %>
   <div class="description">
 
 
