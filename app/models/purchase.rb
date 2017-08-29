@@ -1,4 +1,7 @@
 class Purchase < ApplicationRecord
+  STATUS= ["approved", "pending", "declined"]
+  validates :status, presence: true, inclusion: { in: STATUS }
+
   belongs_to :item
   belongs_to :user
   validates :item, presence: true
