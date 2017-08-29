@@ -1,8 +1,13 @@
+
+<div class="info" style= "margin: 35px;">
 <%= form_tag purchase_payments_path(@purchase) do %>
   <article>
     <label class="amount">
+
+<!--      <span>Product: <%#= @purchase.item_name%></span> -->
       <span>Amount: <%= humanized_money_with_symbol(@purchase.amount) %></span>
     </label>
+
   </article>
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -13,3 +18,4 @@
     data-amount="<%= @purchase.amount_cents %>"
     data-currency="<%= @purchase.amount.currency %>"></script>
 <% end %>
+</div>
