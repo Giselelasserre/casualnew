@@ -1,56 +1,43 @@
 
 <div class="container">
-      <!--   <h3><%#= @user.avatar %> || <%#= @user.facebook_picture_url%> </h3> -->
-
-  <%= link_to "Add a Review", new_user_review_path(@item.owner, item_id: @item.id) %>
-  <div class="description">
+<div class="review-no" style= "margin: 35px;">
+ <h2> <%= link_to "+ Add a Review", new_item_review_path(@item.id) %></h2>
 
 
-    <div class="description-content text-justify">
-
-     <!-- <div class="details col-md-8"> -->
-     <h3 class="product-title"><%= @item.item_name %></h3>
-     <div class="rating">
-      <div class="stars">
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star"></span>
-        <span class="fa fa-star"></span>
-      </div>
-      <span class="review-no">2 reviews</span>
-
-    </div>
-
-    </div>
-
-    <div class="message">
-    <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-      <div class="message-name">
-
-        <p><%= Date.strptime %></p>
-
-
-
-      </div>
-      <div class="message-body">
-        <p><strong>This is a nice <%= @item.item_name %> </strong></p>
-        <p>
-          I've already bought from this retailer. I've got the product on time!
-        </p>
-      </div>
-    </div>
-
-
+  <p> <%= @item.owner.reviews.count %> reviews</p>
 
   </div>
+  <% @item.owner.reviews.each do |review| %>
+    <div class="description">
+
+      <div class="description-content text-justify">
+        <!-- <div class="details col-md-8"> -->
+        <h3 class="product-title"><%= review.item.item_name %></h3>
+
+        <div class="rating">
+          <div class="stars">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="message">
+        <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan" />
+
+       <!--  <%#= @user.avatar %> || <%#= @user.facebook_picture_url%>  -->
+        <div class="message-name">
+          <p><%= review.created_at %></p>
+        </div>
+
+        <div class="message-body">
+        <div class="col-xs-12 col-md-6 col-lg-4">
+          <p><strong><%= review.content %></strong></p>
+        </div>
+      </div>
+     </div>
+    </div>
+  <% end %>
 </div>
-
-
-
-
-
-
-
-
-
