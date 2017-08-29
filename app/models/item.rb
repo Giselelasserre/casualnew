@@ -1,5 +1,5 @@
 class Item < ApplicationRecord
-  CATEGORIES= ["Blouse", "Shirt", "Accessories", "Pant", "Jacket", "Other"]
+  CATEGORIES= ["Select a Category", "Blouse", "Shirt", "Accessories", "Pant", "Jacket", "Other"]
   validates :category, presence: true, inclusion: { in: CATEGORIES }
   has_many :purchases, dependent: :destroy
   has_many :customers, through: :purchases, class_name:"User", source: "user"
