@@ -3,9 +3,7 @@
   <div class="profile text-center">
     <div class="main">
       <div class="main-content">
-      <% @item.photo_items.each do |photo| %>
-  <%= cl_image_tag photo.path, width: 250, height: 300, crop: :fill, class: "img-circle" %>
-<% end %>
+        <%= cl_image_tag @item.photo_items.first.path, width: 250, height: 300, crop: :fill, class: "img-circle" %>
         <p> <%= @item.item_name %> </p>
    <!--      <p> <%= @item.category %> </p> -->
 
