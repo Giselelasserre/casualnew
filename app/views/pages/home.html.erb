@@ -36,20 +36,27 @@
 
       <% @last_items.each do |item| %>
       <div class="col-xs-12 col-md-6 col-lg-4">
-        <div class="card ">
-          <% if item.photo_items.any? %>
-          <div class="card-body" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)),
-          url('<%= cl_image_path item.photo_items.first.path, height: 300, width: 400, crop: :fill %>')">
-          <% else %>
-          <div class="card-body pants">
-           <% end %>
-           <span class="card-category"><%= item.category %></span>
-           <div class="card-description">
+        <% if item.photo_items.any? %>
+          <%=link_to item_path(item) do%>
+              <div class="card ">
+                <div class="card-body" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)),
+                url('<%= cl_image_path item.photo_items.first.path, height: 300, width: 400, crop: :fill %>')">
+              <span class="card-category"><%= item.category %></span>
+              <div class="card-description">
+                <h2><%= item.item_name %></h2>
+              </div>
+            </div>
+          <%end%>
+        <% else %>
+          <div class="card ">
+            <div class="card-body pants">
+          <span class="card-category"><%= item.category %></span>
+          <div class="card-description">
             <h2><%= item.item_name %></h2>
           </div>
+          </div>
+        <% end %>
 
-          <%= link_to "", item_path(item), class: "card-link" %>
-        </div>
         <div class="card-footer">
           <p>Posted on <%= item.created_at.to_date %></p>
           <div class="controls">
