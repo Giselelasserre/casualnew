@@ -1,7 +1,7 @@
 <div class="map-wrapper">
 <h1> New Items Everyday! </h1>
   <div class="grid-container">
-    <div class="cards_container">
+    <div class="cards_container" style= "margin: 20px">
       <% @items.each do |item| %>
         <!-- <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%#= image_url("blouse1.jpg") %>')"> -->
           <div class="card-content">
@@ -10,7 +10,7 @@
               <div>
                 <h2> <%= item.item_name %> </h2>
                   <p>Price: <%= humanized_money_with_symbol(item.price) %></p>
-                         $ <%= item.price %> </p>
+                         <!-- $ <%= item.price %> </p> -->
               </div>
               <p><%= item.description %></p>
               <p> <%= link_to "See item details", item_path(item) %></p>
