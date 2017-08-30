@@ -3,9 +3,9 @@
   <div class="profile text-center">
     <div class="main">
       <div class="main-content">
-        <%= cl_image_tag @item.photo_items.first.path, width: 250, height: 300, crop: :fill, class: "img-circle" %>
+      <%= cl_image_tag @item.photo_items.first.path, width: 250, height: 300, crop: :fill, class: "img-circle" %>
         <p> <%= @item.item_name %> </p>
-   <!--      <p> <%= @item.category %> </p> -->
+
 
 
         <%= render'shared/carousel' %>
@@ -18,31 +18,37 @@
 
     <div class="description">
 
-    <div class="rating">
 
-      <% if @item.owner.received_reviews.empty? %>
-        No reviews yet.
-      <% else %>
-        <%= render'shared/stars', stars: @item.owner.average_rating %>
-      <% end %>
+      <div class="col-xs-12">
 
 
+
+    <div class="row">
+      <div class="col-md-3">
+        <% if @item.owner.received_reviews.empty? %>
+          No reviews yet.
+        <% else %>
+          <%= render'shared/stars', stars: @item.owner.average_rating %>
+        <% end %>
+        <a href="#reviews">Check the reviews below</a>
+      </div>
+
+      <div class="col-md-4 col-md-offset-1">
       <div class="description-content">
+        <!--  <p class="text-justify"> -->
 
-       <!--  <p class="text-justify"> -->
+        <p>Price: <%= humanized_money_with_symbol(@item.price) %></p>
 
-      <p>Price: <%= humanized_money_with_symbol(@item.price) %></p>
+        <h5 class="sizes">sizes:<span><%= @item.size %></span></h5>
 
-      <h5 class="sizes">sizes:<span><%= @item.size %></span></h5>
-
-      <%= form_tag purchases_path do %>
-        <%= hidden_field_tag 'item_id', @item.id %>
-        <%= submit_tag 'Add to cart', class: 'btn btn-primary' %>
-      <% end %>
-
-
+        <%= form_tag purchases_path do %>
+          <%= hidden_field_tag 'item_id', @item.id %>
+          <%= submit_tag 'Add to cart', class: 'btn btn-primary' %>
+        <% end %>
+      </div>
       </div>
     </div>
+      </div>
     </div>
 
 
@@ -61,7 +67,9 @@
   </div>
 </div>
 
-    <%= render'shared/review-product' %>
+<div id="reviews">
+  <%= render'shared/review-product' %>
+</div>
 
 
 
