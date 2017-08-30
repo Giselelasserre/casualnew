@@ -20,7 +20,11 @@
 
     <div class="rating">
 
-    <%= render'shared/stars', stars: @item.owner.reviews.sum(:star) / @item.owner.reviews.count %>
+      <% if @item.owner.received_reviews.empty? %>
+        No reviews yet.
+      <% else %>
+        <%= render'shared/stars', stars: @item.owner.average_rating %>
+      <% end %>
 
 
       <div class="description-content">
