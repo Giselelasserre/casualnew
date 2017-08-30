@@ -19,16 +19,10 @@
     <div class="description">
 
     <div class="rating">
-        <div class="stars">
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-        </div>
-        <span class="review-no">2 reviews</span>
 
-        </div>
+    <%= render'shared/stars', stars: @item.owner.reviews.sum(:star) / @item.owner.reviews.count %>
+
+
       <div class="description-content">
 
        <!--  <p class="text-justify"> -->
@@ -42,18 +36,9 @@
         <%= submit_tag 'Add to cart', class: 'btn btn-primary' %>
       <% end %>
 
-        <!-- <p> Price in USD <%= @item.price %> </p>
-        <p> Size <%= @item.size %> </p>
-
-          This is a nice <%= @item.item_name %> available on the size <strong> <%= @item.size %> </strong> .
-        </p>
-
-        <p>The <!-- ><!-- estimate time to get to you is --> <%#= @item.days_delivery %> <!-- days!</p> -->
-
-
-
 
       </div>
+    </div>
     </div>
 
 
