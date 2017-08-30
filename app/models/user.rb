@@ -34,6 +34,14 @@ class User < ApplicationRecord
     return user
   end
 
+  def average_rating
+    if received_reviews.count > 0
+      received_reviews.sum(:star) / received_reviews.count
+    else
+      0
+    end
+  end
+
   private
 
   def send_welcome_email
