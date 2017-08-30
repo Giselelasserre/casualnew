@@ -39,4 +39,8 @@ class User < ApplicationRecord
     UserMailer.welcome(self).deliver_now
   end
 
+  def send_contactus_email
+    UserMailer.contactus(self).deliver_now
+  end
+
 end

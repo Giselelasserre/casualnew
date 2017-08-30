@@ -7,4 +7,9 @@ class UserMailer < ApplicationMailer
     # This will render a view in `app/views/user_mailer`!
   end
 
+  def contactus(user)
+    @user = user
+    mail(to: 'casuallewagon@gmail.com', subject: 'This is a message from an important Customer')
+  end
+
 end
