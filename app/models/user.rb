@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_many :purchased_item, through: :purchases, class_name: "Item", source: "item"
   has_many :items, dependent: :destroy
   has_many :reviews, dependent: :destroy
+  has_many :received_reviews, through: :items, source: :reviews
   after_create :send_welcome_email
 
   has_attachments :avatar
@@ -31,6 +32,14 @@ class User < ApplicationRecord
     end
 
     return user
+  end
+
+  def average_rating
+    if received_reviews.count > 0
+      received_reviews.sum(:star) / received_reviews.count
+    else
+      0
+    end
   end
 
   private

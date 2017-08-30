@@ -1,9 +1,9 @@
   <div class="update">
 
- <%= link_to "See your list Items", my_items_path, class: "btn btn-warning" %>
+ <%= link_to "See Your Listed Items Here", my_items_path, class: "btn btn-warning" %>
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
-    <h1> Add your Clothes here </h1>
+    <h1> Add Your Item Here </h1>
 
       <%= simple_form_for(@item) do |f| %>
         <%= f.input :category, collection: Item::CATEGORIES %>

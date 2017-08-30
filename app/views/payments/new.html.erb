@@ -1,3 +1,5 @@
+<div class="align-margen" style="margin:50px;">
+
 <%= form_tag purchase_payments_path(@purchase) do %>
   <article>
     <label class="amount">
@@ -13,3 +15,4 @@
     data-amount="<%= @purchase.amount_cents %>"
     data-currency="<%= @purchase.amount.currency %>"></script>
 <% end %>
+</div>

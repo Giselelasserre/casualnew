@@ -4,13 +4,12 @@
     <%= image_tag "casual_logo2.png" %>
   <% end %>
 
-<%= link_to "Sell Your Clothes", new_item_path, class: "buton-nav btn-lg" %>
+<%= link_to "Sell An Item", new_item_path, class: "buton-nav btn-lg" %>
 
 
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-    <%= link_to "About", "/#about", class: "navbar-wagon-item navbar-wagon-link" %>
 
     <% if user_signed_in? %>
 

@@ -1,11 +1,9 @@
 <div class="container">
- <h1> Good Choice, you've selected </h1>
+ <h1> Excellent Choice! </h1>
   <div class="profile text-center">
     <div class="main">
       <div class="main-content">
-      <% @item.photo_items.each do |photo| %>
-  <%= cl_image_tag photo.path, width: 250, height: 300, crop: :fill, class: "img-circle" %>
-<% end %>
+        <%= cl_image_tag @item.photo_items.first.path, width: 250, height: 300, crop: :fill, class: "img-circle" %>
         <p> <%= @item.item_name %> </p>
    <!--      <p> <%= @item.category %> </p> -->
 
@@ -21,16 +19,14 @@
     <div class="description">
 
     <div class="rating">
-        <div class="stars">
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-        </div>
-        <span class="review-no">2 reviews</span>
 
-        </div>
+      <% if @item.owner.received_reviews.empty? %>
+        No reviews yet.
+      <% else %>
+        <%= render'shared/stars', stars: @item.owner.average_rating %>
+      <% end %>
+
+
       <div class="description-content">
 
        <!--  <p class="text-justify"> -->
@@ -44,18 +40,9 @@
         <%= submit_tag 'Add to cart', class: 'btn btn-primary' %>
       <% end %>
 
-        <!-- <p> Price in USD <%= @item.price %> </p>
-        <p> Size <%= @item.size %> </p>
-
-          This is a nice <%= @item.item_name %> available on the size <strong> <%= @item.size %> </strong> .
-        </p>
-
-        <p>The <!-- ><!-- estimate time to get to you is --> <%#= @item.days_delivery %> <!-- days!</p> -->
-
-
-
 
       </div>
+    </div>
     </div>
 
 
@@ -74,29 +61,7 @@
   </div>
 </div>
 
-
-
     <%= render'shared/review-product' %>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- <
 
 
 

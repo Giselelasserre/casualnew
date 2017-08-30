@@ -1,6 +1,9 @@
+<div class="align-margen" style="margin:50px;">
+
 <h1>Purchase</h1>
 <ul>
   <li>Status: <%= @purchase.status %></li>
-  <li>Item: <%= @purchase.item_name %></li>
+  <li>Item: <%= @purchase.item.item_name %></li>
   <li>Amount: <%= humanized_money_with_symbol(@purchase.amount) %></li>
 <ul>
+</div>
