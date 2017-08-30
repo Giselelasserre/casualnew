@@ -4,10 +4,10 @@
  <h2> <%= link_to "+ Add a Review", new_item_review_path(@item.id) %></h2>
 
 
-  <p> <%= @item.owner.reviews.count %> reviews</p>
+  <p> <%= @item.owner.received_reviews.count %> reviews</p>
 
   </div>
-  <% @item.owner.reviews.each do |review| %>
+  <% @item.owner.received_reviews.each do |review| %>
     <div class="description">
 
       <div class="description-content text-justify">
@@ -25,7 +25,7 @@
       </div>
 
       <div class="message">
-        <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan" />
+        <%= image_tag review.user.facebook_picture_url || "avatar_demo.jpg", class: "avatar-large" %>
 
        <!--  <%#= @user.avatar %> || <%#= @user.facebook_picture_url%>  -->
         <div class="message-name">
