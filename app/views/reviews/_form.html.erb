@@ -1,5 +1,6 @@
 <%= simple_form_for([ @item, @review ]) do |form| %>
   <%= form.input :content, as: :text %>
+   <%= form.input :star, as: :select, collection: (1..5) %>
   <%= form.button :submit %>
 
 <% end %>

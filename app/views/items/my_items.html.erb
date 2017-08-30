@@ -23,7 +23,7 @@
           <%= item.id %>
         </td>
         <td>
-          <%= item.purchases.any? ? "Sold" : "Available" %>
+          <%= item.purchases.any? ? item.purchases.first.status : "Available" %>
         </td>
 
         <td>
