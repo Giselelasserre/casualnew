@@ -18,6 +18,7 @@ class PaymentsController < ApplicationController
     )
 
     @purchase.update(payment: charge.to_json)
+    ItemMailer.sold(@purchase.item).deliver_now
     redirect_to purchase_path(@purchase)
   rescue Stripe::CardError => e
     flash[:alert] = e.message
