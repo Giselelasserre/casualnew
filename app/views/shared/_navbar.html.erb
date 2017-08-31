@@ -19,7 +19,13 @@
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <% avatar_url = current_user.facebook_picture_url || "avatar_demo.jpg"  %>
+          <% if current_user.facebook_picture_url %>
+            <% avatar_url = current_user.facebook_picture_url %>
+          <% elsif current_user.avatar.present? %>
+            <% avatar_url = cl_image_path(current_user.avatar.path) %>
+          <% else %>
+            <% avatar_url = "avatar_demo.jpg" %>
+          <% end %>
           <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
 
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
@@ -52,7 +58,7 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
+        <li><a href="#">Products link</a></li>
         <li><a href="#">Other one</a></li>
         <li><a href="#">Other one</a></li>
       </ul>

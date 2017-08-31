@@ -35,8 +35,10 @@
                     <ul>
                         <li>
                             <div class="input-append newsletter-box text-center">
-                                <input type="text" class="full text-center" placeholder="Email ">
-                                <button class="btn  bg-gray" type="button"> Email us <i class="fa fa-long-arrow-right"> </i> </button>
+                                <%= form_tag "/contact_us", method: :post do %>
+                                  <textarea class="full" placeholder="Please enter your message here." name="message"></textarea>
+                                  <button class="btn  bg-gray" type="submit"> Email us __ <i class="fa fa-long-arrow-up"> </i> </button>
+                                <% end %>
                             </div>
                         </li>
                     </ul>
