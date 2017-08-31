@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :received_reviews, through: :items, source: :reviews
   after_create :send_welcome_email
 
-  has_attachments :avatar
+  has_attachment :avatar
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [:facebook]
