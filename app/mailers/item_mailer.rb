@@ -7,11 +7,11 @@ class ItemMailer < ApplicationMailer
     # This will render a view in `app/views/user_mailer`!
   end
 
-  def sold(item)
-    @user = item.owner  # Instance variable => available in view
-    @item = item
+  def sold(purchase)
+    @user = purchase.item.owner  # Instance variable => available in view
+    @purchase = purchase
 
-    mail(to: @user.email, subject: "You just sold #{@item.item_name}, congrats!")
+    mail(to: @user.email, subject: "You just sold #{@purchase.item.item_name}, congrats!")
     # This will render a view in `app/views/user_mailer`!
   end
 end
