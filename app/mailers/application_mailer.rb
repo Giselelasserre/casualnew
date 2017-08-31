@@ -1,5 +1,6 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'confirmation-email@casual.com'
+
+  default from: 'casuallewagon@gmail.com'
 
   layout 'mailer'
 end
