@@ -1,35 +1,11 @@
 <div class="map-wrapper">
-<h1> New Items Everyday! </h1>
+  <h1> New Items Everyday! </h1>
+
   <div class="grid-container">
-    <div class="cards_container" style= "margin: 20px">
-
-
-      <% @items.each do |item| %>
-        <!-- <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%#= image_url("blouse1.jpg") %>')"> -->
-          <div class="card-content">
-            <div class="card-category"></div>
-            <div class="card-description">
-              <div>
-                <h2> <%= item.item_name %> </h2>
-                  <p>Price: <%= humanized_money_with_symbol(item.price) %></p>
-                         <!-- $ <%= item.price %> </p> -->
-              </div>
-              <p><%= item.description %></p>
-              <p> <%= link_to "See item details", item_path(item) %></p>
-            </div>
-
-            <% if item.photo_items.any? %>
-              <%= cl_image_tag item.photo_items.first.path, class:"card-clothes" %>
-            <%end%>
-
-        </div>
-
-      <!-- </div> -->
-    <% end %>
-
-  </div>
-  <div class="map_container">
-    <div id="map" ></div>
+    <%= render 'shared/products_selection', items: @items %>
+    <div class="map_container">
+      <div id="map" ></div>
+    </div>
   </div>
 </div>
 
