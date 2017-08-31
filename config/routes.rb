@@ -15,9 +15,12 @@ Rails.application.routes.draw do
 
   get "/team", to: "pages#team"
   get "/contact", to: "pages#contact"
+
   get "/company", to: "pages#company"
   get "/about", to: "shared#about2"
   get "/home2", to: "pages#home2"
+
+  post "/contact_us", to: "pages#contact_us"
 
 
   mount Attachinary::Engine => "/attachinary"
