@@ -4,14 +4,11 @@
   }
 </style>
 
+<div class="align-margen" style="margin:50px;">
+
 <p>Hello <%= @user.first_name %>,</p>
 
 <p>You product  <%= @item.item_name %>  was been sold </p>
-
-
-<div class="align-margen" style="margin:50px;">
-  <h1> You are almost there ! </h1>
-
  <p> <strong> Product name: <%= @purchase.item.item_name %> </strong> </p>
 
 <%= form_tag purchase_payments_path(@purchase) do %>
