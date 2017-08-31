@@ -11,27 +11,28 @@
     </thead>
     <tbody>
       <% @items.each do |item| %>
-      <tr>
-        <td>
-          <%= item.item_name %>
-        </td>
-        <td>
-          <%= item.purchases.first.order if item.purchases.first.present? %>
-        </td>
-        <td>
-          <%= item.purchases.first.user.email if item.purchases.first.present? %>
-        </td>
-        <td>
-          <%= item.purchases.any? ? item.purchases.first.status : "Available" %>
-        </td>
+        <% sold_item = item.purchases.where(status: "sold").first %>
+        <tr>
+          <td>
+            <%= item.item_name %>
+          </td>
+          <td>
+            <%= sold_item.order if sold_item.present? %>
+          </td>
+          <td>
+            <%= sold_item.user.email if sold_item.present? %>
+          </td>
+          <td>
+            <%= sold_item.present? ? "Sold" : "Available" %>
+          </td>
 
-        <td>
-          <% unless item.purchases.any? %>
-            <%= link_to "Edit", edit_item_path(item) %>
-            <%= link_to "Delete", item_path(item), method: :delete %>
-          <% end %>
-       </td>
-     </tr>
+          <td>
+            <% unless sold_item.present? %>
+              <%= link_to "Edit", edit_item_path(item) %>
+              <%= link_to "Delete", item_path(item), method: :delete %>
+            <% end %>
+          </td>
+        </tr>
      <% end %>
    </tbody>
  </table>
