@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get "/company", to: "pages#company"
   get "/about", to: "shared#about2"
   get "/home2", to: "pages#home2"
+  get "/index2", to: "items#index2"
 
 
   mount Attachinary::Engine => "/attachinary"

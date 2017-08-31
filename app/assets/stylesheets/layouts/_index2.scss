@@ -1,8 +1,8 @@
-// Import your components CSS files here.
-@import "alert";
-@import "navbar";
-@import "footer";
-@import "star";
+// Import your layouts CSS files here.
+// Examples:
+// @import "dashboard";
+// @import "profile";
+// @import "map";
 
 
 .map-wrapper {
@@ -104,4 +104,3 @@
 #map {
   height: calc(100vh - 80px);
 }
-
