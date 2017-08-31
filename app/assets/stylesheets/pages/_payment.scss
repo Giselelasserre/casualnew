@@ -1,0 +1,24 @@
+.buttons {
+  margin-top: 20px;
+}
+
+.btn-back {
+  overflow: hidden;
+  display: inline-block;
+  visibility: visible !important;
+  background-image: linear-gradient(#666666,#000000);
+  border: 0;
+  padding: 5px 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  user-select: none;
+  cursor: pointer;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+
+  &:hover {
+    text-decoration: none;
+    color: white;
+  }
+}
