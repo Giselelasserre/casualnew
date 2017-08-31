@@ -1,7 +1,7 @@
 
 <div class="container">
 <div class="review-no" style= "margin: 35px;">
- <h2> <%= link_to "+ Add a Review", new_item_review_path(@item.id) %></h2>
+ <h2> <%= link_to "+ Add a Review", new_item_review_path(@item) %></h2>
 
 
   <p> <%= @item.owner.received_reviews.count %> reviews</p>
