@@ -8,4 +8,9 @@
   <p>Item: <%= @purchase.item.item_name %></p>
   <p>Amount: <%= humanized_money_with_symbol(@purchase.amount) %><p>
 
+<div class="row">
+        <div class="col-md-3">
+          <%= cl_image_tag @purchase.item.photo_items.first.path %>
+        </div>
+
 </div>
