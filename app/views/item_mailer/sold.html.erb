@@ -1,7 +1,7 @@
 <style>
   html {
     font-family: sans-serif;
-    background-color: #E3D1D1;
+    background-color: ;
   }
 /*.buton-product {
   background-color: #EB3A7E;
@@ -16,7 +16,7 @@ border-width: 10px;
 
 </style>
 
-<div class="email-sold" style="background-color: #E5DCDC;">
+<div class="email-sold" style="background-color: ;">
 
 
 
@@ -33,18 +33,22 @@ border-width: 10px;
             <!-- <img src="https://image.freepik.com/icones-gratis/cabide_318-43294.jpg" border="0" width="100" height="80" item-position= "center" style="display: block;" > -->
 
 
-              <img src="http://casualclicks.com/Images/site_wide/logo.png" border="0" width="300" height="150" item-position= "center" style="display: block;" >
+              <img src="http://res.cloudinary.com/ddfvlr6h2/image/upload/c_scale,w_121/v1504269301/casual_logo2_bupf1x.png" item-position= "center" style="display: block;" >
 
 
             <div class="align-margen" style="margin:50px;">
 
-            <div class="name" style="color:#EB3A7E;">
+            <div class="name" style="color:#F6635C;">
               <h1>Hello <%= @user.first_name %>,</h1>
             </div>
               <p>Your product <%= @purchase.item.item_name %> was sold.</p>
+
+            <!--  <div class="photo-adjust" style=" width:"192px"; height: "320px";" -->
+              <div class="photo-adjust">
               <% if @purchase.item.photo_items.any? %>
-              <p><%= cl_image_tag(@purchase.item.photo_items.first.path) %></p>
+              <p><%= cl_image_tag(@purchase.item.photo_items.first.path, height: 200, crop: :fill) %></p>
               <% end %>
+             <!--  </div> -->
             </div>
           </div>
 

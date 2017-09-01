@@ -3,9 +3,14 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Casual is a fashion marketplace">
+    <meta property="og:title" content="Casual - Dress fashion, everyday">
+    <meta property="og:image" content="casual_logo.png">
+    <meta property="og:description" content="Very easy way to get well dressed every day">
+    <meta property="og:site_name" content="Casual"/>
 
 
-    <title>CASUAL</title>
+    <title><%= yield(:title_tag).blank? ? "CASUAL the best way to dress" : yield(:title_tag) %></title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
      <%= stylesheet_link_tag 'application', media: 'all' %>
