@@ -1,11 +1,11 @@
 
 <div class="container ctn">
   <div class="banner-home" id="lfb" >
-    <img class="bottom" style="background-image: linear-gradient(-225deg, rgba(232,214,174,0.6) 0%, rgba(232,214,174,0.6) 50%), url('https://isntmandylovely.files.wordpress.com/2013/04/set.jpg' );">
-    <img class="top" style="background-image: linear-gradient(-225deg, rgba(232,214,174,0.6) 0%, rgba(232,214,174,0.6) 50%), url('http://ell.h-cdn.co/assets/17/10/640x320/landscape-1488838925-elle-march-2017-fashion-math-01-6-sports-to-take-up-this-spring.jpg');">
+    <img class="bottom" style="background-image: linear-gradient(-225deg, rgba(214,201,201,0.8) 0%, rgba(232,214,174,0.8) 50%), url('https://isntmandylovely.files.wordpress.com/2013/04/set.jpg' );">
+    <img class="top" style="background-image: linear-gradient(-225deg, rgba(214,201,201,0.7) 0%, rgba(214,201,201,0.8) 50%), url('http://ell.h-cdn.co/assets/17/10/640x320/landscape-1488838925-elle-march-2017-fashion-math-01-6-sports-to-take-up-this-spring.jpg');">
     <div class="banner-content">
-      <h1 class="white">Buy fashion with Casual</h1>
-      <div class= "well-dressed">Well Dressed, everyday</div>
+      <h1 class="white">Buy Clothing & Fashion with Casual</h1>
+      <div class= "well-dressed">Well-dressed, everyday</div>
       <form action="/items" class="form-inline">
 
 
@@ -28,7 +28,7 @@
 
 
   <div class="container">
-    <div class="text-center text-title well-dressed margin-top ">Glamourous and Fancy</div>
+    <div class="text-center text-title well-dressed margin-top "> FASHION & BEAUTY</div>
 
      <!--  <div class="well-dressed margin-top">Glamour and Fancy</div>
     </div> -->
@@ -36,22 +36,30 @@
 
       <% @last_items.each do |item| %>
       <div class="col-xs-12 col-md-6 col-lg-4">
-        <div class="card ">
-          <% if item.photo_items.any? %>
-          <div class="card-body" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)),
-          url('<%= cl_image_path item.photo_items.first.path, height: 300, width: 400, crop: :fill %>')">
-          <% else %>
-          <div class="card-body pants">
-           <% end %>
-           <span class="card-category"><%= item.category %></span>
-           <div class="card-description">
+        <% if item.photo_items.any? %>
+          <%=link_to item_path(item) do%>
+              <div class="card ">
+                <div class="card-body" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)),
+                url('<%= cl_image_path item.photo_items.first.path, height: 300, width: 400, crop: :fill %>')">
+              <span class="card-category"><%= item.category %></span>
+              <div class="card-description">
+                <h2><%= item.item_name %></h2>
+              </div>
+            </div>
+          <%end%>
+        <% else %>
+          <div class="card ">
+            <div class="card-body pants">
+          <span class="card-category"><%= item.category %></span>
+          <div class="card-description">
             <h2><%= item.item_name %></h2>
           </div>
+          </div>
+        <% end %>
 
-          <%= link_to "", item_path(item), class: "card-link" %>
-        </div>
+
         <div class="card-footer">
-          <p>Posted on <%= item.created_at.to_date %></p>
+          <p>Posted on <%=  item.created_at.to_date %></p>
           <div class="controls">
             <a href="#"><i class="fa fa-star"></i></a>
             <a href="#"><i class="fa fa-heart"></i></a>
@@ -73,8 +81,8 @@
 
    <div class="about" id="about">
     <div class= "about-txt">
-      <h2>About Casual</h2>
-      <p>Casual is marketplace for online fashion.</p>
+      <h2>About</h2>
+      <p style="font-size:85%;">Casual is an online marketplace for fashion.</p>
     </div>
   </div>
 

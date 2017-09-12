@@ -1,0 +1,19 @@
+<div class="" style= "margin-top: 15px"  >
+  <% items.each do |item| %>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail" >
+         <div class="t"
+          <h2> <%= item.item_name %> </h2>
+          <p>Price: <%= humanized_money_with_symbol(item.price) %></p>
+          <p><%= item.description %></p>
+          <p> <%= link_to "See item details", item_path(item) %></p>
+        </div>
+
+        <% if item.photo_items.any? %>
+          <%= cl_image_tag item.photo_items.first.path, class: "img-responsive img-height" %>
+        <%end%>
+      </div>
+    </div>
+  <% end %>
+</div>
+
