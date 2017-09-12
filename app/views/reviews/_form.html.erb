@@ -1,8 +1,16 @@
-<%= simple_form_for([ @user, @review ]) do |form| %>
-  <%= form.input :content, as: :text %>
-  <%= form.button :submit %>
+<div class = "container">
+  <div class = "row">
+    <div class = "col-sm-8 col-sm-offset-2">
+      <%= simple_form_for([ @item, @review ]) do |form| %>
+      <%= form.input :content, as: :text %>
+      <%= form.input :star, as: :select, collection: (1..5) %>
+      <%= form.button :submit %>
 
-<% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
 
 
-<!-- Addcionei o @item, nas estava original -->
+
+

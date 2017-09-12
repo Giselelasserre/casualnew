@@ -9,6 +9,7 @@ body {
 .ctn {
   width: 100%;
   padding: 0;
+  margin-bottom: 40px;
 }
 
 .search-bar {
@@ -46,11 +47,11 @@ body {
 
 
 .well-dressed{
-  font-family: 'Sedgwick Ave Display', cursive;
+  font-family: bold;
   margin-bottom: 30px;
   color: #F6A75C;
   font-size: 50px;
-  text-shadow: 0px 5px rgba(122, 106, 106, 0.5);
+  text-shadow: 0px 3px rgba(122, 106, 106, 0.5);
   text-align: center;
 
 }
@@ -59,6 +60,10 @@ body {
   margin-top: 15px;
   // padding-top: 50px;
   }
+
+.text-title {
+  margin-top: 30px;
+}
 
 // .banner-home {
 //   background-image: -webkit-linear-gradient(bottom, rgba(232,214,174,0.6) 0%, rgba(232,214,174,0.6) 50%), image-url('banner_home.jpg');

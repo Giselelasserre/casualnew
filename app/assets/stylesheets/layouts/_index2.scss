@@ -1,8 +1,8 @@
-// Import your components CSS files here.
-@import "alert";
-@import "navbar";
-@import "footer";
-@import "star";
+// Import your layouts CSS files here.
+// Examples:
+// @import "dashboard";
+// @import "profile";
+// @import "map";
 
 
 .map-wrapper {
@@ -20,12 +20,12 @@
 }
 .card-content {
   height: 175px;
-  text-shadow: 0 1px 1px rgba(0,0,0,0.6);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
   color: black;
   position: relative;
-  background-color: #e6e6e6;
+  background-color: #D6C9C9;
   padding: 5px;
 }
 .card-clothes {
@@ -64,10 +64,7 @@
 }
 
 
-.thumbnail > img.img-height {
-  height: 250px;
-  width: 100%;
-}
+
 
 // .card-category {
 //   position: absolute;
@@ -107,4 +104,3 @@
 #map {
   height: calc(100vh - 80px);
 }
-

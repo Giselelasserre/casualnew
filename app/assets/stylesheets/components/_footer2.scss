@@ -81,6 +81,10 @@
   background-image: -moz-linear-gradient(center bottom, #BBBBBB 0%, #F0F0F0 100%);
   box-shadow: 0 1px 0 #B4B3B3;
 }
+
+.footer2 ul.social2 li a {
+  font-size: 33px;
+}
 .social2 li {
   background: none repeat scroll 0 0 #B5B5B5;
   border: 2px solid #B5B5B5;
@@ -90,12 +94,12 @@
   -ms-border-radius: 50%;
   border-radius: 50%;
   float: left;
-  height: 36px;
+  height: 43px;
   line-height: 36px;
   margin: 0 8px 0 0;
-  padding: 0;
+  padding: 3px;
   text-align: center;
-  width: 36px;
+  width: 43px;
   transition: all 0.5s ease 0s;
   -moz-transition: all 0.5s ease 0s;
   -webkit-transition: all 0.5s ease 0s;

@@ -3,38 +3,36 @@
     <thead>
       <tr>
         <th>Item name</th>
-        <th>User_id</th>
-        <th>Item_id</th>
+        <th>Order</th>
+        <th>Buyer</th>
         <th>Status</th>
-        <th>Edit</th>
-        <th>Delete</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
       <% @items.each do |item| %>
-      <tr>
-        <td>
-          <%= item.item_name %>
-        </td>
-        <td>
-          <%= item.user_id %>
-        </td>
-        <td>
-          <%= item.id %>
-        </td>
-        <td>
-          <%= item.purchases.any? ? "Sold" : "Available" %>
-        </td>
+        <% sold_item = item.purchases.where(status: "sold").first %>
+        <tr>
+          <td>
+            <%= item.item_name %>
+          </td>
+          <td>
+            <%= sold_item.order if sold_item.present? %>
+          </td>
+          <td>
+            <%= sold_item.user.email if sold_item.present? %>
+          </td>
+          <td>
+            <%= sold_item.present? ? "Sold" : "Available" %>
+          </td>
 
-        <td>
-          <%= link_to "Edit", edit_item_path(item) %>
-
-        </td>
-
-        <td>
-         <%= link_to "Delete", item_path(item), method: :delete %>
-       </td>
-     </tr>
+          <td>
+            <% unless sold_item.present? %>
+              <%= link_to "Edit", edit_item_path(item) %>
+              <%= link_to "Delete", item_path(item), method: :delete %>
+            <% end %>
+          </td>
+        </tr>
      <% end %>
    </tbody>
  </table>

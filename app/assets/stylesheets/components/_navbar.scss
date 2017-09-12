@@ -37,6 +37,12 @@
   height: 90px;
 }
 
+.navbar-wagon-brand {
+  flex: 1;
+  display: flex;
+  min-width: -webkit-min-content;
+}
+
 /* User Avatar */
 .navbar-wagon .avatar {
   height: 35px;
@@ -46,9 +52,11 @@
 
 /* Right section */
 .navbar-wagon-right {
+  flex: 1;
   display: flex;
+  min-width: -webkit-min-content;
+  justify-content: flex-end;
   align-items: center;
-  justify-content: space-between;
 }
 
 /* Basic navbar item */

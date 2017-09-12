@@ -1,0 +1,12 @@
+<style>
+  html {
+    font-family: sans-serif;
+  }
+</style>
+
+<p>Hello <%= @user.first_name %>,</p>
+
+<p>You product  <%= @item.item_name %>  was been sold </p>
+<p>We hope you find what you want to buy and wish you won't forget to include items that you may be willing to sell.</p>
+
+<%= link_to "Return to Casual.", root_url %>

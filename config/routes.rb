@@ -3,20 +3,26 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
-  resources :items
+  resources :items do
+     resources :reviews
+  end
   resources :purchases, only: [:show, :create] do
     resources :payments, only: [:new, :create]
   end
 
-  resources :users, only: [ :index, :show ] do
-    resources :reviews, only: [:create, :new]
-  end
+  resources :users, only: [ :index, :show ]
+
 
   get "/team", to: "pages#team"
   get "/contact", to: "pages#contact"
+
   get "/company", to: "pages#company"
   get "/about", to: "shared#about2"
   get "/home2", to: "pages#home2"
+  get "/index2", to: "items#index2"
+  get "/form", to: "reviews#form"
+
+  post "/contact_us", to: "pages#contact_us"
 
 
   mount Attachinary::Engine => "/attachinary"

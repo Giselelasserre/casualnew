@@ -1,6 +1,16 @@
-<h1>Purchase</h1>
-<ul>
-  <li>Status: <%= @purchase.status %></li>
-  <li>Item: <%= @purchase.item.name %></li>
-  <li>Amount: <%= humanized_money_with_symbol(@purchase.amount) %></li>
-<ul>
+<div class="align-margen" style="margin:50px;">
+
+<h1>Thank you for your purchase</h1>
+<h2>Order number is: <%= @purchase.order %></h2>
+<h3>Your Purchase Status</h3>
+
+  <p>Status: <%= @purchase.status %></p>
+  <p>Item: <%= @purchase.item.item_name %></p>
+  <p>Amount: <%= humanized_money_with_symbol(@purchase.amount) %><p>
+
+<div class="row">
+        <div class="col-md-3">
+          <%= cl_image_tag @purchase.item.photo_items.first.path %>
+        </div>
+
+</div>
