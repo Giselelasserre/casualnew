@@ -1,3 +1,19 @@
+
+
+<div class="info" style= "margin: 55px;">
+
+
+<h1>Status of your Purchase in Casual</h1>
+
+
+ <li>Status of your payment: <%= @purchase.status %> </li>
+
+
+ <li> Product name: <%= @purchase.item.item_name %> </li>
+
+  <li>Amount: <%= humanized_money_with_symbol(@purchase.amount) %></li>
+
+
 <div class="align-margen" style="margin:50px;">
 
 <h1>Thank you for your purchase</h1>
@@ -14,3 +30,4 @@
         </div>
 
 </div>
+
