@@ -1,9 +1,10 @@
 <div class="navbar-wagon">
   <!-- Logo -->
+  <div class="col-xs-4 col-md-4 col-lg-4">
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "casual_logo.png" %>
   <% end %>
-
+  </div>
 <%= link_to "Sell An Item", new_item_path, class: "buton-nav btn-lg" %>
 
 
@@ -58,9 +59,8 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Products link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+        <li><%= link_to "My Items List", my_items_path %></li>
+        <li><%= link_to "Add a Review", "/#form" %></li>
       </ul>
     </div>
   </div>
